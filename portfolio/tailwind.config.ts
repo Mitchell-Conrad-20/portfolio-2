@@ -1,6 +1,7 @@
 import type { Config } from 'tailwindcss'
 
 const config: Config = {
+  darkMode: 'class',
   content: [
     './pages/**/*.{js,ts,jsx,tsx,mdx}',
     './components/**/*.{js,ts,jsx,tsx,mdx}',
@@ -22,6 +23,7 @@ const config: Config = {
       'triadic2': '#EE022D',
       'gray': '#0D0D0D',
       'white': '#FFFFFF',
+      'transparent': 'rgba(225, 225, 225, 0)',
     },
     fontFamily: {
       sans: ['Graphik', 'sans-serif'],
