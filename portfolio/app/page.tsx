@@ -12,14 +12,14 @@ export default function Home() {
 
   return (
     <div className={dark ? "dark" : ""}>
-      <main className={"px-10 bg-white dark:bg-gray"}>
-        <section className="min-h-screen text-gray">
+      <main className={"px-10 bg-white text-gray dark:bg-gray dark:text-white"}>
+        <section className="min-h-screen">
 
           <Navbar darkModeToggle = { () => setDark(!dark) } />
 
           <div className='text-center'>
             {/* Gradient Text: text-transparent font-bold text-4xl bg-clip-text bg-gradient-to-r from-analagous1 to-primary */}
-            <h2 className='text-transparent font-bold text-4xl bg-clip-text bg-gradient-to-r from-analagous1 to-primary dark:text-complementary'>Mitchell Conrad</h2>
+            <h2 className='text-transparent font-bold text-4xl bg-clip-text bg-gradient-to-r from-analagous1 to-primary'>Mitchell Conrad</h2>
             <h3 className='text-xl py-2'>Computer Engineer</h3>
             <p className='leading-8 md:w-144 md:mx-auto'>
               Swift learner and highly motivated engineer. Graduating August 2024. Seeking full-time roles in embedded systems, software, and hardware.
