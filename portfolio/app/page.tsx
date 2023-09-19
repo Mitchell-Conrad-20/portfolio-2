@@ -4,11 +4,30 @@ import Image from 'next/image'
 import Card from './components/card'
 import { AiFillLinkedin, AiFillGithub, AiFillPhone, AiFillMail } from 'react-icons/ai'
 import headshotSquare from '../public/images/headshotSquare.png'
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 
 export default function Home() {
   // Dark Mode - Uses user preference first. User an opt. to switch at any point
-  const [dark, setDark] = useState(false)
+  const [dark, setDark] = useState<boolean>(false)
+
+  // Retrieve dark mode settings
+  useEffect(() => {
+    if (typeof window !== 'undefined' && window.localStorage) {
+      // Fetch the state from local storage
+      let darkMode = localStorage.getItem("dark") === "true"
+
+      // Update the state
+      setDark(darkMode)
+    }
+  }, [])
+
+  // Store dark mode settings to local storage
+  useEffect(() => {
+    if (typeof window !== "undefined" && window.localStorage) {
+      // Save the state
+      localStorage.setItem("dark", dark ? "true" : "false")
+    }
+  }, [dark])
 
   return (
     <div className={dark ? "dark" : ""}>
