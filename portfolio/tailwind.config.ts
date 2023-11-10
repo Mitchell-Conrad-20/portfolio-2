@@ -22,6 +22,7 @@ const config: Config = {
       'triadic1': '#C302EE',
       'triadic2': '#EE022D',
       'gray': '#0D0D0D',
+      'lightGray': '#333333',
       'white': '#FFFFFF',
       'transparent': 'rgba(225, 225, 225, 0)',
     },
