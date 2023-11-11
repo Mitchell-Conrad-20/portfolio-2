@@ -4,6 +4,7 @@ import Image from 'next/image'
 import Card from './components/Card'
 import Modal from './components/Modal'
 import Button from './components/Button'
+import Notification from './components/Notification'
 import { AiFillLinkedin, AiFillGithub, AiFillPhone, AiFillMail, AiOutlineCopy } from 'react-icons/ai'
 import headshotSquare from '../public/images/headshotSquare.png'
 import rifle from '../public/images/firing.gif'
@@ -18,6 +19,10 @@ export default function Home() {
   // Set Modal States
   const [phone, setPhone] = useState<boolean>(false)
   const [email, setEmail] = useState<boolean>(false)
+
+  // Progress Bar States
+  const [phonePercent, setPhonePercent] = useState<number>(100)
+  const [emailPercent, setEmailPercent] = useState<number>(100)
 
   // Retrieve dark mode settings
   useEffect(() => {
@@ -37,6 +42,46 @@ export default function Home() {
       localStorage.setItem("dark", dark ? "true" : "false")
     }
   }, [dark])
+
+  // Timer for Phone Progress Bar
+  useEffect(() => {
+    if(phone){
+      const interval = setInterval(() => {
+        setPhonePercent((prev) => prev - 0.25)
+      }, 10)
+      return () => {
+        setPhonePercent(100)
+        clearInterval(interval)
+      }
+    }
+  }, [phone])
+
+  // Reset Phone Notification When Timer Finishes
+  useEffect(() => {
+    if(phonePercent <= 0){
+      setPhone(false)
+    }
+  },[phonePercent])
+
+    // Timer for Email Progress Bar
+    useEffect(() => {
+      if(email){
+        const interval = setInterval(() => {
+          setEmailPercent((prev) => prev - 0.25)
+        }, 10)
+        return () => {
+          setEmailPercent(100)
+          clearInterval(interval)
+        }
+      }
+    }, [email])
+  
+    // Reset Email Notification When Timer Finishes
+    useEffect(() => {
+      if(emailPercent <= 0){
+        setEmail(false)
+      }
+    },[emailPercent])
 
   return (
     <div className={(dark ? "dark" : "")}>
@@ -60,8 +105,16 @@ export default function Home() {
             <a href='https://github.com/Mitchell-Conrad-20' target='_blank' rel='noreferrer'>
               <AiFillGithub />
             </a>
-            <AiFillPhone className='cursor-pointer' onClick={()=> setPhone(true)}/>
-            <AiFillMail className='cursor-pointer' onClick={()=> setEmail(true)}/>
+            <AiFillPhone className='cursor-pointer' onClick={()=> {
+                setPhone(true)
+                navigator.clipboard.writeText('4845029014') 
+              }
+            }/>
+            <AiFillMail className='cursor-pointer' onClick={()=> {
+                setEmail(true)
+                navigator.clipboard.writeText('mconrad4@ycp.edu')
+              }
+            }/>
           </div>
 
           <div className='flex justify-center'>
@@ -105,38 +158,20 @@ export default function Home() {
 
         </section>
 
-        { email && 
-          <Modal title='Email Me' open={email} handleClose={() => setEmail(false)}>
-            <p>mconrad4@ycp.edu</p>
-            <Button text='Copy' onClick={ () => {
-                navigator.clipboard.writeText('mconrad4@ycp.edu') 
-                setEmail(false)
-              }
-            }>
-              <AiOutlineCopy className='text-xl'/>
-            </Button>
-            <a href='mailto:mconrad4@ycp.edu'>
-              <Button text='Open in App' onClick={ () => setEmail(false) }>
-              </Button>
+        { phone && 
+          <Notification title="Phone Number Copied" open={phone} percent={phonePercent} handleClose={() => setPhone(false)}>
+            <a href='tel:484-502-9014'>
+              <p className='text-sm'>Open in App</p>
             </a>
-          </Modal>
+          </Notification>
         }
 
-        { phone && 
-          <Modal title='Call Me' open={phone} handleClose={() => setPhone(false)}>
-            <p>484-502-9014</p>
-            <Button text='Copy' onClick={ () => { 
-                navigator.clipboard.writeText('4845029014') 
-                setPhone(false)
-              }
-            }>
-              <AiOutlineCopy className='text-xl'/>
-            </Button>
-            <a href='tel:484-502-9014'>
-              <Button text='Open in App' onClick={ () => setPhone(false) }>
-              </Button>
+        { email && 
+          <Notification title="Email Copied" open={email} percent={emailPercent} handleClose={() => setEmail(false)}>
+            <a href='mailto:mconrad4@ycp.edu'>
+              <p className='text-sm'>Open in App</p>
             </a>
-          </Modal>
+          </Notification>
         }
 
       </main>
