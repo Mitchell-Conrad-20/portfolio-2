@@ -15,7 +15,9 @@ import drone from '../public/images/droneCrop.jpg'
 import synth from '../public/images/midiFront.jpg'
 import paperTrader from '../public/images/paperTrader.png'
 import heicTool from '../public/images/HEIC-Conversion-Tool-Graphic.png'
+import testBg from '../public/images/test.png'
 import { useState, useEffect } from 'react'
+import Timeline from './components/Timeline'
 
 export default function Home() {
   // Dark Mode - Uses user preference first. User an opt. to switch at any point
@@ -96,7 +98,7 @@ export default function Home() {
 
           <div className='text-center'>
             {/* Gradient Text: text-transparent font-bold text-4xl bg-clip-text bg-gradient-to-r from-analagous1 to-primary */}
-            <h2 className='text-transparent font-bold text-4xl bg-clip-text bg-gradient-to-r from-analagous1 to-primary'>Mitchell Conrad</h2>
+            <h2 className='text-transparent font-bold text-4xl bg-clip-text bg-gradient-to-br from-analagous1 to-primary'>Mitchell Conrad</h2>
             <h3 className='text-xl py-2'>Computer Engineer</h3>
             <p className='leading-8 md:w-144 md:mx-auto'>
               Swift learner and highly motivated engineer. Graduating August 2024. Seeking full-time roles in embedded systems, software, and hardware.
@@ -123,26 +125,27 @@ export default function Home() {
           </div>
 
           <div className='flex justify-center'>
-            <div className='bg-gradient-to-r from-analagous1 to-primary rounded-full w-72 h-72'>
+            <div className='bg-gradient-to-br from-analagous1 to-primary rounded-full w-72 h-72'>
               <Image src={headshotSquare} alt='Headshot of Mitchell Conrad' className='relative rounded-full p-1'/>
             </div>
           </div>
         </section>
 
-        {/* <section className='pt-10'>
+        <section className='py-10 px-10'>
           <h3 className='text-xl'>Experience</h3>
           <p className='leading-8 py-5 lg:w-2/5 md:w-2/3'>
             During my time at York College of Pennsylvania, I completed three internships for two companies and gained over a year of work experience. During these internships, I contributed to a variety of projects and learned many valuable skills.
           </p>
-        </section> */}
+          <Timeline/>
+        </section>
 
         {/* // add icons of the skills i used in each project and internship to the cards */}
-        <section className='text-center pt-10 pb-20 bg-gradient-to-br from-analagous1 to-primary text-white'>
+        <section className='text-center pt-10 pb-20 bg-gradient-to-br'>
           <h3 className='text-xl'>Skills</h3>          
           <div className='flex justify-center gap-x-20 flex-col md:flex-row'>
             <div className='pt-5'>
               <p className='pt-2'>Web Development</p>
-              <div className='text-4xl flex justify-center gap-x-2 pt-2'>
+              <div className='text-4xl flex justify-center gap-x-5 pt-2'>
                 <DiHtml5 />
                 <DiCss3 />
                 <DiReact />
@@ -152,7 +155,7 @@ export default function Home() {
 
             <div className='pt-5'>
               <p className='pt-2'>General-Purpose Languages</p>
-              <div className='text-4xl flex justify-center gap-x-2 pt-2'>
+              <div className='text-4xl flex justify-center gap-x-5 pt-2'>
                 <SiC />
                 <SiCplusplus />
                 <SiCsharp />
@@ -163,7 +166,7 @@ export default function Home() {
 
             <div className='pt-5'>
               <p className='pt-2'>Technologies</p>
-              <div className='text-4xl flex justify-center gap-x-2 pt-2'>
+              <div className='text-4xl flex justify-center gap-x-5 pt-2'>
                 <SiArduino />
                 <SiOpencv />
                 <SiNvidia />
@@ -200,6 +203,28 @@ export default function Home() {
             </Card>            
           </div>
         </section>  
+
+        <section className='text-center py-10 bg-gradient-to-br from-analagous1 to-primary text-white dark:from-gray dark:to-gray'>
+          <h3 className='text-xl'>Reach Out!</h3>  
+          <div className='flex justify-center gap-5 text-4xl py-5'>
+            <a href='https://www.linkedin.com/in/mitch-conrad/' target='_blank' rel='noreferrer'>
+              <AiFillLinkedin />
+            </a>
+            <a href='https://github.com/Mitchell-Conrad-20' target='_blank' rel='noreferrer'>
+              <AiFillGithub />
+            </a>
+            <AiFillPhone className='cursor-pointer' onClick={()=> {
+                setPhone(true)
+                navigator.clipboard.writeText('4845029014') 
+              }
+            }/>
+            <AiFillMail className='cursor-pointer' onClick={()=> {
+                setEmail(true)
+                navigator.clipboard.writeText('mconrad4@ycp.edu')
+              }
+            }/>
+          </div>    
+        </section>
 
         {/* Notification Popups */}
 
