@@ -5,11 +5,16 @@ import Card from './components/Card'
 import Modal from './components/Modal'
 import Button from './components/Button'
 import Notification from './components/Notification'
-import { AiFillLinkedin, AiFillGithub, AiFillPhone, AiFillMail, AiOutlineCopy } from 'react-icons/ai'
+import { AiFillLinkedin, AiFillGithub, AiFillPhone, AiFillMail } from 'react-icons/ai'
+import { DiReact, DiJava, DiJsBadge, DiCss3, DiHtml5, DiPython } from "react-icons/di";
+import { SiCsharp, SiCplusplus, SiC, SiArduino, SiOpencv, SiNvidia } from "react-icons/si";
 import headshotSquare from '../public/images/headshotSquare.png'
 import rifle from '../public/images/firing.gif'
+import robot from '../public/images/robot.png'
 import drone from '../public/images/droneCrop.jpg'
-import synth from '../public/images/midiCombined.png'
+import synth from '../public/images/midiFront.jpg'
+import paperTrader from '../public/images/paperTrader.png'
+import heicTool from '../public/images/HEIC-Conversion-Tool-Graphic.png'
 import { useState, useEffect } from 'react'
 
 export default function Home() {
@@ -85,8 +90,8 @@ export default function Home() {
 
   return (
     <div className={(dark ? "dark" : "")}>
-      <main className={"px-10 bg-white text-gray dark:bg-gray dark:text-white"}>
-        <section className="min-h-screen">
+      <main className={"bg-white text-gray dark:bg-gray dark:text-white"}>
+        <section className="min-h-screen px-10">
           <Navbar darkModeToggle = { () => setDark(!dark) } />
 
           <div className='text-center'>
@@ -118,45 +123,85 @@ export default function Home() {
           </div>
 
           <div className='flex justify-center'>
-            <div className='bg-gradient-to-r from-analagous1 to-primary  rounded-full w-72 h-72'>
+            <div className='bg-gradient-to-r from-analagous1 to-primary rounded-full w-72 h-72'>
               <Image src={headshotSquare} alt='Headshot of Mitchell Conrad' className='relative rounded-full p-1'/>
             </div>
           </div>
         </section>
 
-        <section>
-          <h3 className='text-xl'>Portfolio</h3>
-          {/* // add icons of the skills i used in each project and internship to the cards */}
-          <div className='lg:flex gap-10'>
-            <Card src={rifle} alt='Rifle for VR Games' title='Immersive Recoil for VR'>
-              <p>Description of VR project</p>
-            </Card>
-            <Card src={drone} alt='test' title='Drone from Scratch'>
-              <p>Description of drone project</p>
-            </Card>
-            <Card src={synth} alt='test' title='Stepper Motor MIDI Synth'>
-              <p>Description of midi synth project</p>
-            </Card>
-          </div>
-        </section>
-
-        <section>
-          {/* // add icons of the skills i used in each project and internship to the cards */}
+        {/* <section className='pt-10'>
           <h3 className='text-xl'>Experience</h3>
-          <p className='leading-8'>
+          <p className='leading-8 py-5 lg:w-2/5 md:w-2/3'>
             During my time at York College of Pennsylvania, I completed three internships for two companies and gained over a year of work experience. During these internships, I contributed to a variety of projects and learned many valuable skills.
           </p>
+        </section> */}
 
-          <div className='lg:flex gap-10'>
-            <Card src={headshotSquare} alt='Getting Parameters from Drive at a Customer Site' title='Multi-Dimensional Integration'>
-              <p>Testing testing testing. Lorem ipsum dolor sit amet. Testing testing testing. Lorem ipsum dolor sit amet. Testing testing testing. Lorem ipsum dolor sit amet.</p>
-            </Card>
-            <Card src={headshotSquare} alt='test' title='Becton Dickinson'>
-              <p>Testing testing testing. Lorem ipsum dolor sit amet. Testing testing testing. Lorem ipsum dolor sit amet. Testing testing testing. Lorem ipsum dolor sit amet.</p>
-            </Card>
+        {/* // add icons of the skills i used in each project and internship to the cards */}
+        <section className='text-center pt-10 pb-20 bg-gradient-to-br from-analagous1 to-primary text-white'>
+          <h3 className='text-xl'>Skills</h3>          
+          <div className='flex justify-center gap-x-20 flex-col md:flex-row'>
+            <div className='pt-5'>
+              <p className='pt-2'>Web Development</p>
+              <div className='text-4xl flex justify-center gap-x-2 pt-2'>
+                <DiHtml5 />
+                <DiCss3 />
+                <DiReact />
+                <DiJsBadge />
+              </div>
+            </div>
+
+            <div className='pt-5'>
+              <p className='pt-2'>General-Purpose Languages</p>
+              <div className='text-4xl flex justify-center gap-x-2 pt-2'>
+                <SiC />
+                <SiCplusplus />
+                <SiCsharp />
+                <DiJava />
+                <DiPython />
+              </div>
+            </div>
+
+            <div className='pt-5'>
+              <p className='pt-2'>Technologies</p>
+              <div className='text-4xl flex justify-center gap-x-2 pt-2'>
+                <SiArduino />
+                <SiOpencv />
+                <SiNvidia />
+              </div>
+            </div>
           </div>
 
+          {/* <p>Industrial</p> */}
+
+          {/* ignition, factorytalk, studio 5, 500, 5k */}
+          
         </section>
+
+        <section className='px-10'>
+          <h3 className='text-xl text-center pt-10'>Gallery</h3>
+          <div className='flex flex-row flex-wrap justify-center'>
+            <Card src={rifle} alt='Rifle for VR Games' title='Immersive Recoil for VR'>
+              <p>Simulates realistic recoil when firing weapons in VR games. The recoil is generated using a pneumatic piston, which can fire rapidly at various intensities to simulate a variety of firearms.</p>
+            </Card>
+            <Card src={robot} alt='Robot' title='Optical Wireless Communications'>
+              <p>Developed a computer vision aided OWC system for autonomous mobile robots.</p>
+            </Card>
+            <Card src={drone} alt='Drone' title='Drone'>
+              <p>Created a drone using an Arduino based flight controller.</p>
+            </Card>
+            <Card src={synth} alt='MIDI Synthesizer' title='Stepper Motor MIDI Synth'>
+              <p>Processes live MIDI signals and creates music using the vibrations of stepper motors.</p>
+            </Card>
+            <Card src={paperTrader} alt='Screenshot of Website' title='PaperTrader'>
+              <p>PaperTrader gives users access to real stock market data and charts in order to make informed buy and sell decisions with play money.</p>
+            </Card>  
+            <Card src={heicTool} alt='Screenshot of HEIC Conversion Tool Software' title='HEIC Conversion Tool'>
+              <p>Allows users to convert entire folders of HEIC (iPhone) photos to JPG or PNG formats.</p>
+            </Card>            
+          </div>
+        </section>  
+
+        {/* Notification Popups */}
 
         { phone && 
           <Notification title="Phone Number Copied" open={phone} percent={phonePercent} handleClose={() => setPhone(false)}>
