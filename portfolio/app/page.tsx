@@ -17,7 +17,7 @@ import paperTrader from '../public/images/paperTrader.png'
 import heicTool from '../public/images/HEIC-Conversion-Tool-Graphic.png'
 import testBg from '../public/images/test.png'
 import { useState, useEffect } from 'react'
-import Timeline from './components/Timeline'
+import TimelineVertical from './components/TimelineVertical'
 
 export default function Home() {
   // Dark Mode - Uses user preference first. User an opt. to switch at any point
@@ -131,12 +131,21 @@ export default function Home() {
           </div>
         </section>
 
-        <section className='py-10 px-10'>
-          <h3 className='text-xl'>Experience</h3>
-          <p className='leading-8 py-5 lg:w-2/5 md:w-2/3'>
-            During my time at York College of Pennsylvania, I completed three internships for two companies and gained over a year of work experience. During these internships, I contributed to a variety of projects and learned many valuable skills.
-          </p>
-          <Timeline/>
+        <section className='py-10 px-10 min-h-screen'>
+          {/* <div className='flex flex-wrap lg:flex-nowrap'>
+            <div>
+              <h3 className='text-xl'>Experience</h3>
+              <p className='leading-8 py-5 lg:w-2/5 md:w-2/3'>
+                During my time at York College of Pennsylvania, I completed three internships for two companies and gained over a year of work experience. During these internships, I contributed to a variety of projects and learned many valuable skills.
+              </p>
+            </div>
+            <TimelineVertical/>
+          </div> */}
+            <h3 className='text-xl'>Experience</h3>
+            <p className='leading-8 py-5 lg:w-2/5 md:w-2/3'>
+              During my time at York College of Pennsylvania, I completed three internships for two companies and gained over a year of work experience. During these internships, I contributed to a variety of projects and learned many valuable skills.
+            </p>
+            <TimelineVertical/>
         </section>
 
         {/* // add icons of the skills i used in each project and internship to the cards */}
