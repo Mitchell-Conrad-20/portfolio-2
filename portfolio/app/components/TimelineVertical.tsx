@@ -27,7 +27,7 @@ const TimelineVertical = () => {
             <div className='flex-grow h-0.5 mt-6 rounded-r-md bg-gray dark:bg-white' />
         </div>
         <div className='col-span-3 pt-3'>
-            <p className='font-bold'>CS Tutor</p>
+            <p className='font-bold'>Computer Science Tutor</p>
             <p className='text-sm font-semibold'>2021-2024</p>
             <p className='text-sm'>Java and C</p>
         </div>
