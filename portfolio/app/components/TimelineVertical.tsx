@@ -43,8 +43,16 @@ const TimelineVertical = () => {
                         <div className='flex'>
                             <div className='w-20 h-0.5 mt-3 rounded-md bg-gray dark:bg-white' />
                         </div>
-                        <div className='px-2'>
-                            <div className='w-2 h-128 mt-12 rounded-md bg-analagous1 dark:bg-white' />
+                        <div className='px-2 mt-12 flex'>
+                            <div className='w-2 h-128 rounded-md bg-analagous1 dark:bg-white' />
+                            <div>
+                                <div className='w-20 h-0.5 mt-60 rounded-md bg-gray dark:bg-white' />
+                                <div className='px-2 pb-2 ml-20'>
+                                    <p className='font-bold'>CS Tutor</p>
+                                    <p className='text-sm font-semibold'>2021-2024</p>
+                                    <p className='text-sm'>Java and C</p>
+                                </div>
+                            </div>
                         </div>
                     </div>
                     <div className='px-2 pb-2'>
