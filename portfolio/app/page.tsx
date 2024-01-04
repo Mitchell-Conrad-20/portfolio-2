@@ -8,6 +8,7 @@ import Notification from './components/Notification'
 import { AiFillLinkedin, AiFillGithub, AiFillPhone, AiFillMail } from 'react-icons/ai'
 import { DiReact, DiJava, DiJsBadge, DiCss3, DiHtml5, DiPython } from "react-icons/di";
 import { SiCsharp, SiCplusplus, SiC, SiArduino, SiOpencv, SiNvidia } from "react-icons/si";
+import headshotSquareClear from '../public/images/headshot-square-clear.png'
 import headshotSquare from '../public/images/headshotSquare.png'
 import rifle from '../public/images/firing.gif'
 import robot from '../public/images/robot.png'
@@ -15,8 +16,6 @@ import drone from '../public/images/droneCrop.jpg'
 import synth from '../public/images/midiFront.jpg'
 import paperTrader from '../public/images/paperTrader.png'
 import heicTool from '../public/images/HEIC-Conversion-Tool-Graphic.png'
-import code from '../public/images/code_for_website.png'
-import testBg from '../public/images/test.png'
 import { useState, useEffect } from 'react'
 import TimelineVertical from './components/TimelineVertical'
 
@@ -126,24 +125,29 @@ export default function Home() {
           </div>
 
           <div className='flex justify-center'>
-            <div className='bg-gradient-to-br from-analagous1 to-primary rounded-full w-72 h-72'>
-              <Image src={headshotSquare} alt='Headshot of Mitchell Conrad' className='relative rounded-full p-1'/>
+            <div className='flex justify-center align-middle bg-gradient-to-br from-analagous1 to-primary rounded-full w-72 h-72'>
+              <Image src={headshotSquareClear} alt='Headshot of Mitchell Conrad' className='relative rounded-full m-1 bg-white dark:bg-gray'/>
             </div>
           </div>
+
+          {/* <div className='flex justify-center align-middle bg-gradient-to-br from-analagous1 to-primary rounded-lg w-72 h-72'>
+            <Image src={headshotSquareClear} alt='Headshot of Mitchell Conrad' className='rounded-lg relative m-1 bg-white dark:bg-gray'/>
+          </div> */}
         </section>
 
         {/* Experience Section */}
-        <section className='py-10 px-10 bg-gray text-white dark:bg-lightGray'>
+        <section className='py-10 px-10 bg-gray text-white dark:bg-[rgba(255,255,255,0.05)]'>
           <div className='flex flex-wrap justify-center gap-x-20 lg:flex-nowrap'>
+            
+            {/* Left Side - Experience Overview */}
             <div className='lg:w-2/5 md:w-2/3'>
               <h3 className='text-xl'>Experience</h3>
               <p className='leading-8 py-5'>
                 During my time at York College of Pennsylvania, I completed three internships for two companies and gained over a year of work experience. During these internships, I contributed to a variety of projects and learned many valuable skills.
               </p>
             </div>
-            {/* <TimelineVertical/> */}
-            {/* <Image src={code} alt='Screenshot of C++ Code' className='rounded-md h-52 w-auto p-1'/> */}
             
+            {/* Right Side - Cool Looking Code Snippet */}
             <div className='text-xs whitespace-pre text-white py-5 lg:block hidden'>
               <p><span className='text-triadic2'>{"template"}</span>{" <"}<span className='text-triadic2'>{"class T"}</span>{">"}</p>
               <p><span className='text-triadic2'>{"void"}</span>{" BinHeap<T>::"}<span className='text-analagous1'>{"percolateDown"}</span>{"("}<span className='text-triadic2'>{"int"}</span>{" idx) {"}</p>
@@ -157,16 +161,8 @@ export default function Home() {
               <p>{"        cIndex = minChild(idx)"}<span className='text-triadic2'>{";"}</span></p>
               <p>{"    }"}</p>
               <p>{"}"}</p>
-
             </div>
-
           </div>
-          {/* <div className=''>
-            <h3 className='text-xl'>Experience</h3>
-            <p className='leading-8 py-5 lg:w-2/5 md:w-2/3'>
-              During my time at York College of Pennsylvania, I completed three internships for two companies and gained over a year of work experience. During these internships, I contributed to a variety of projects and learned many valuable skills.
-            </p>
-          </div> */}
         </section>
         
         {/* Timeline Section */}
@@ -239,7 +235,8 @@ export default function Home() {
           </div>
         </section>  
 
-        <section className='text-center py-10 bg-gradient-to-br from-analagous1 to-primary text-white dark:from-gray dark:to-gray'>
+        {/* Footer */}
+        <section className='text-center py-10 text-white bg-gray dark:bg-[rgba(255,255,255,0.05)]'>
           <h3 className='text-xl'>Reach Out!</h3>  
           <div className='flex justify-center gap-5 text-4xl py-5'>
             <a href='https://www.linkedin.com/in/mitch-conrad/' target='_blank' rel='noreferrer'>
