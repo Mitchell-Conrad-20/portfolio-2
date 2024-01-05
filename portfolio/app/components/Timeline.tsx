@@ -13,7 +13,7 @@ const Timeline = () => {
                     <p className='text-sm'>Mathematics Minor</p>
                 </div>
             </div>
-            <div className='w-4/5'>
+            <div className='w-4/5 flex flex-col justify-end'>
                 <div className='flex'>
                     <div className='w-0.5 ml-5 rounded-sm bg-white' />
                     <div className='px-2 pb-2'>
@@ -22,7 +22,7 @@ const Timeline = () => {
                         <p className='text-sm'>Java and C</p>
                     </div>
                 </div>
-                <div className='w-full h-2 mb-1 rounded-md bg-analagous1' />
+                <div className='w-full h-2 mb-3 rounded-md bg-analagous1' />
             </div>
         </div>
 
