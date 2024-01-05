@@ -2,6 +2,7 @@ import React from 'react'
 import Image from 'next/image'
 import Socials from './Socials'
 import headshotSquareClear from '../../public/images/headshot-square-clear.png'
+import { VscChromeMinimize , VscChromeMaximize, VscChromeClose } from "react-icons/vsc";
 
 const Splash = (props: {setPhone: () => void, setEmail: () => void}) => {
   return (
@@ -18,11 +19,23 @@ const Splash = (props: {setPhone: () => void, setEmail: () => void}) => {
 
                 {/* Terminal Style Intro */}
                 <div className="mx-auto text-left shadow-2xl rounded-lg my-2 dark:bg-[rgba(255,255,255,0.05)]">
-                <div className="px-5 py-3 leading-loose">
-                    <p>{">"} Swift learner and highly motivated engineer.</p>
-                    <p>{">"} Seeking a full-time role in embedded systems, software, or hardware.</p>
-                    <p>{">"} Graduating August 2024.</p>
-                </div>
+                    <div className='py-0.5 rounded-t-lg flex justify-between align-middle px-1 gap-x-1 bg-gray dark:bg-lightGray text-white'>
+                        <div>
+                            <p className='text-xs pl-2'>Terminal</p>
+                        </div>
+                        <div className='rounded-t-lg flex justify-end align-middlegap-x-1'>
+                            <VscChromeMinimize  />
+                            <VscChromeMaximize />
+                            <span className='text-triadic2'>
+                                <VscChromeClose />
+                            </span>
+                        </div>
+                    </div>
+                    <div className="px-5 py-3 leading-loose">
+                        <p>{">"} Swift learner and highly motivated engineer.</p>
+                        <p>{">"} Seeking a full-time role in embedded systems, software, or hardware.</p>
+                        <p>{">"} Graduating August 2024.</p>
+                    </div>
                 </div>
 
                 {/* Social Links */}
