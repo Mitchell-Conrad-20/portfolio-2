@@ -16,6 +16,7 @@ import synth from '../public/images/midiFront.jpg'
 import paperTrader from '../public/images/paperTrader.png'
 import heicTool from '../public/images/HEIC-Conversion-Tool-Graphic.png'
 import { useState, useEffect } from 'react'
+import Timeline from './components/Timeline'
 import TimelineVertical from './components/TimelineVertical'
 import Socials from './components/Socials'
 
@@ -162,7 +163,11 @@ export default function Home() {
         
         {/* Timeline Section */}
         <section className='py-10 px-10'>
-          <TimelineVertical/>
+          {/* Horizontal Timeline (Large Screens Only) */}
+          <div className='hidden lg:block'><Timeline /></div>
+
+          {/* Vertical Timeline */}
+          <div className='lg:hidden'><TimelineVertical/></div>
         </section>
 
         {/* // add icons of the skills i used in each project and internship to the cards */}

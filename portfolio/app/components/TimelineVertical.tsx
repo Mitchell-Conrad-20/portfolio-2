@@ -14,7 +14,7 @@ const TimelineVertical = () => {
             <p className='font-bold'>York College of Pennsylvania</p>
             <p className='text-sm font-semibold'>2020-2024</p>
             <p className='text-sm'>B.S. Computer Engineering</p>
-            <p className='text-sm'>Minor in Mathematics</p>
+            <p className='text-sm'>Mathematics Minor</p>
         </div>
 
         {/* Row 2 */}
