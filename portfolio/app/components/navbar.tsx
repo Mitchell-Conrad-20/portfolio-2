@@ -3,7 +3,7 @@ import {BsFillMoonStarsFill} from 'react-icons/bs';
 
 const Navbar = ( props: { darkModeToggle:()=>void } ) => {
   return (
-    <nav className='py-10 mb-12 flex justify-between'>
+    <nav className='py-10 flex justify-between'>
         <h1 className='font-bold text-xl pt-2'>Mitchell Conrad</h1>
         <ul className='flex items-center'>
             <li><BsFillMoonStarsFill onClick={ () => props.darkModeToggle() } className='cursor-pointer text-2xl' /></li>
