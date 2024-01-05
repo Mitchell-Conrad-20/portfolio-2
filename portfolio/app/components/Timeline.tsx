@@ -34,12 +34,14 @@ const Timeline = () => {
             </div>
             <div className='w-1/6 px-2'>
                 <div className='w-full h-2 mt-3 rounded-md bg-triadic2' />
-                <div className='flex'>
+                <div className='flex group'>
                     <div className='w-0.5 ml-5 rounded-sm bg-white' />
                     <div className='px-2 pt-2'>
                         <p className='font-bold'>Becton Dickinson</p>
                         <p className='text-sm font-semibold'>May-Aug 2022</p>
                         <p className='text-sm'>Software Engineering Intern</p>
+                        {/* <br className='hidden group-hover:block'/>
+                        <p className='hidden group-hover:block'>Developed C#, TypeScript, and Angular code for the COR System.</p> */}
                     </div>
                 </div>
             </div>
