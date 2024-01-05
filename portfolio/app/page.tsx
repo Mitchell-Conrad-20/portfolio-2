@@ -133,6 +133,56 @@ export default function Home() {
 
         </section>
 
+        {/* About Section */}
+        {/* // add icons of the skills i used in each project and internship to the cards */}
+        <section className='py-10 min-h-screen px-10 md:flex md:flex-col md:justify-center'>
+          <div className='md:flex md:justify-center md:gap-x-10'>
+            {/* About Description */}
+            <div className='md:1/2 lg:w-1/3'>
+              <h3 className='text-xl py-5'>About</h3>
+              <p className='leading-loose'>During my time at York College of Pennsylvania, I completed three internships for two companies and gained over a year of work experience. During these internships, I contributed to a variety of projects and learned many valuable skills.</p>
+            </div>
+
+            {/* Skills */}
+            <div className=' md:text-left'>
+              <h3 className='text-xl py-5'>Skills</h3>
+              <div className=''>
+                <div className='flex justify-center gap-x-20 flex-col'>
+                  <div className=''>
+                    <p className='leading-loose'>Web Development</p>
+                    <div className='text-4xl flex justify-start gap-x-5 py-2'>
+                      <DiHtml5 />
+                      <DiCss3 />
+                      <DiReact />
+                      <DiJsBadge />
+                    </div>
+                  </div>
+                  <div className=''>
+                    <p className='leading-loose'>General-Purpose Languages</p>
+                    <div className='text-4xl flex justify-start gap-x-5 py-2'>
+                      <SiC />
+                      <SiCplusplus />
+                      <SiCsharp />
+                      <DiJava />
+                      <DiPython />
+                    </div>
+                  </div>
+                  <div className=''>
+                    <p className='leading-loose'>Technologies</p>
+                    <div className='text-4xl flex justify-start gap-x-5 py-2'>
+                      <SiArduino />
+                      <SiOpencv />
+                      <SiNvidia />
+                    </div>
+                  </div>
+                </div>
+                {/* <p>Industrial</p> */}
+                {/* ignition, factorytalk, studio 5, 500, 5k */}
+              </div>
+            </div>
+          </div>
+        </section>
+
         {/* Experience Section */}
         <section className='py-10 px-10 bg-gray text-white dark:bg-[rgba(255,255,255,0.05)]'>
           <div className='flex flex-wrap justify-center gap-x-20 lg:flex-nowrap'>
@@ -170,47 +220,6 @@ export default function Home() {
 
           {/* Vertical Timeline */}
           <div className='lg:hidden'><TimelineVertical/></div>
-        </section>
-
-        {/* // add icons of the skills i used in each project and internship to the cards */}
-        <section className='text-center pt-10 pb-20 bg-gradient-to-br'>
-          <h3 className='text-xl'>Skills</h3>          
-          <div className='flex justify-center gap-x-20 flex-col md:flex-row'>
-            <div className='pt-5'>
-              <p className='pt-2'>Web Development</p>
-              <div className='text-4xl flex justify-center gap-x-5 pt-2'>
-                <DiHtml5 />
-                <DiCss3 />
-                <DiReact />
-                <DiJsBadge />
-              </div>
-            </div>
-
-            <div className='pt-5'>
-              <p className='pt-2'>General-Purpose Languages</p>
-              <div className='text-4xl flex justify-center gap-x-5 pt-2'>
-                <SiC />
-                <SiCplusplus />
-                <SiCsharp />
-                <DiJava />
-                <DiPython />
-              </div>
-            </div>
-
-            <div className='pt-5'>
-              <p className='pt-2'>Technologies</p>
-              <div className='text-4xl flex justify-center gap-x-5 pt-2'>
-                <SiArduino />
-                <SiOpencv />
-                <SiNvidia />
-              </div>
-            </div>
-          </div>
-
-          {/* <p>Industrial</p> */}
-
-          {/* ignition, factorytalk, studio 5, 500, 5k */}
-          
         </section>
 
         <section className='px-10'>
