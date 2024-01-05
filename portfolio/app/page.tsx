@@ -5,20 +5,16 @@ import Card from './components/Card'
 import Modal from './components/Modal'
 import Button from './components/Button'
 import Notification from './components/Notification'
-import { DiReact, DiJava, DiJsBadge, DiCss3, DiHtml5, DiPython } from "react-icons/di";
-import { SiCsharp, SiCplusplus, SiC, SiArduino, SiOpencv, SiNvidia } from "react-icons/si";
-import headshotSquareClear from '../public/images/headshot-square-clear.png'
 import headshotSquare from '../public/images/headshotSquare.png'
-import rifle from '../public/images/firing.gif'
-import robot from '../public/images/robot.png'
-import drone from '../public/images/droneCrop.jpg'
-import synth from '../public/images/midiFront.jpg'
-import paperTrader from '../public/images/paperTrader.png'
-import heicTool from '../public/images/HEIC-Conversion-Tool-Graphic.png'
 import { useState, useEffect } from 'react'
 import Timeline from './components/Timeline'
 import TimelineVertical from './components/TimelineVertical'
 import Socials from './components/Socials'
+import Gallery from './components/Gallery'
+import About from './components/About'
+import Splash from './components/Splash'
+import Experience
+ from './components/Experience'
 
 export default function Home() {
   // Dark Mode - Uses user preference first. User an opt. to switch at any point
@@ -103,114 +99,19 @@ export default function Home() {
           </div>
 
           {/* Splash Content */}
-          <div className='px-10 text-center lg:flex lg:justify-center lg:text-left lg:h-full'>
-            <div className='flex justify-center mb-5 mx-auto bg-gradient-to-br from-analagous1 to-primary rounded-full w-72 h-72 lg:mx-0'>
-              <Image src={headshotSquareClear} alt='Headshot of Mitchell Conrad' className='relative rounded-full m-1 bg-white dark:bg-gray'/>
-            </div>
-
-            <div className='px-10'>
-              {/* Main Title */}
-              <h2 className='text-transparent font-bold text-4xl bg-clip-text bg-gradient-to-br from-analagous1 to-primary'>Mitchell Conrad</h2>
-              <h3 className='text-xl py-2'>Computer Engineer</h3>
-
-              {/* Terminal Style Intro */}
-              <div className="mx-auto text-left shadow-2xl rounded-lg my-2 dark:bg-[rgba(255,255,255,0.05)]">
-                <div className="px-5 py-3 leading-loose">
-                  <p>{">"} Swift learner and highly motivated engineer.</p>
-                  <p>{">"} Seeking a full-time role in embedded systems, software, or hardware.</p>
-                  <p>{">"} Graduating August 2024.</p>
-                </div>
-              </div>
-
-              {/* Social Links */}
-              <div className='py-5 flex justify-center lg:justify-start'>
-                <Socials setPhone={ () => setPhone(true)} setEmail={ () => setEmail(true)} />
-              </div>
-
-            </div>
-
-          </div>
+          <Splash setPhone={ () => setPhone(true)} setEmail={ () => setEmail(true)} />
 
         </section>
 
         {/* About Section */}
         {/* // add icons of the skills i used in each project and internship to the cards */}
         <section className='py-10 min-h-screen px-10 md:flex md:flex-col md:justify-center'>
-          <div className='md:flex md:justify-center md:gap-x-10'>
-            {/* About Description */}
-            <div className='md:1/2 lg:w-1/3'>
-              <h3 className='text-xl py-5'>About</h3>
-              <p className='leading-loose'>During my time at York College of Pennsylvania, I completed three internships for two companies and gained over a year of work experience. During these internships, I contributed to a variety of projects and learned many valuable skills.</p>
-            </div>
-
-            {/* Skills */}
-            <div className=' md:text-left'>
-              <h3 className='text-xl py-5'>Skills</h3>
-              <div className=''>
-                <div className='flex justify-center gap-x-20 flex-col'>
-                  <div className=''>
-                    <p className='leading-loose'>Web Development</p>
-                    <div className='text-4xl flex justify-start gap-x-5 py-2'>
-                      <DiHtml5 />
-                      <DiCss3 />
-                      <DiReact />
-                      <DiJsBadge />
-                    </div>
-                  </div>
-                  <div className=''>
-                    <p className='leading-loose'>General-Purpose Languages</p>
-                    <div className='text-4xl flex justify-start gap-x-5 py-2'>
-                      <SiC />
-                      <SiCplusplus />
-                      <SiCsharp />
-                      <DiJava />
-                      <DiPython />
-                    </div>
-                  </div>
-                  <div className=''>
-                    <p className='leading-loose'>Technologies</p>
-                    <div className='text-4xl flex justify-start gap-x-5 py-2'>
-                      <SiArduino />
-                      <SiOpencv />
-                      <SiNvidia />
-                    </div>
-                  </div>
-                </div>
-                {/* <p>Industrial</p> */}
-                {/* ignition, factorytalk, studio 5, 500, 5k */}
-              </div>
-            </div>
-          </div>
+          <About />
         </section>
 
         {/* Experience Section */}
         <section className='py-10 px-10 bg-gray text-white dark:bg-[rgba(255,255,255,0.05)]'>
-          <div className='flex flex-wrap justify-center gap-x-20 lg:flex-nowrap'>
-            
-            {/* Left Side - Experience Overview */}
-            <div className='lg:w-2/5 md:w-2/3'>
-              <h3 className='text-xl'>Experience</h3>
-              <p className='leading-8 py-5'>
-                During my time at York College of Pennsylvania, I completed three internships for two companies and gained over a year of work experience. During these internships, I contributed to a variety of projects and learned many valuable skills.
-              </p>
-            </div>
-            
-            {/* Right Side - Cool Looking Code Snippet */}
-            <div className='text-xs whitespace-pre text-white py-5 lg:block hidden'>
-              <p><span className='text-triadic2'>{"template"}</span>{" <"}<span className='text-triadic2'>{"class T"}</span>{">"}</p>
-              <p><span className='text-triadic2'>{"void"}</span>{" BinHeap<T>::"}<span className='text-analagous1'>{"percolateDown"}</span>{"("}<span className='text-triadic2'>{"int"}</span>{" idx) {"}</p>
-              <p><span className='text-triadic2'>{"    int "}</span>{"cIndex = minChild(idx)"}<span className='text-triadic2'>{";"}</span></p>
-              <p><span className='text-triadic2'>{"    while"}</span>{"("}<span className='text-triadic1'>{"heapArray"}</span>{"[idx] > "}<span className='text-triadic1'>{"heapArray"}</span>{"[cIndex] && cIndex != -1){"}</p>
-              <p>{"        T previousChild = "}<span className='text-triadic1'>{"heapArray"}</span>{"[cIndex]"}<span className='text-triadic2'>{";"}</span></p>
-              <p><span className='text-triadic1'>{"        heapArray"}</span>{"[cIndex] = "}<span className='text-triadic1'>{"heapArray"}</span>{"[idx]"}<span className='text-triadic2'>{";"}</span></p>
-              <p><span className='text-triadic1'>{"        heapArray"}</span>{"[idx] = previousChild"}<span className='text-triadic2'>{";"}</span></p>
-              <br />
-              <p>{"        idx = cIndex"}<span className='text-triadic2'>{";"}</span></p>
-              <p>{"        cIndex = minChild(idx)"}<span className='text-triadic2'>{";"}</span></p>
-              <p>{"    }"}</p>
-              <p>{"}"}</p>
-            </div>
-          </div>
+          <Experience />
         </section>
         
         {/* Timeline Section */}
@@ -222,28 +123,9 @@ export default function Home() {
           <div className='lg:hidden'><TimelineVertical/></div>
         </section>
 
+        {/* Gallery Section */}
         <section className='px-10'>
-          <h3 className='text-xl text-center pt-10'>Gallery</h3>
-          <div className='flex flex-row flex-wrap justify-center'>
-            <Card src={rifle} alt='Rifle for VR Games' title='Immersive Recoil for VR'>
-              <p>Simulates realistic recoil when firing weapons in VR games. The recoil is generated using a pneumatic piston, which can fire rapidly at various intensities to simulate a variety of firearms.</p>
-            </Card>
-            <Card src={robot} alt='Robot' title='Optical Wireless Communications'>
-              <p>Developed a computer vision aided OWC system for autonomous mobile robots.</p>
-            </Card>
-            <Card src={drone} alt='Drone' title='Drone'>
-              <p>Created a drone using an Arduino based flight controller.</p>
-            </Card>
-            <Card src={synth} alt='MIDI Synthesizer' title='Stepper Motor MIDI Synth'>
-              <p>Processes live MIDI signals and creates music using the vibrations of stepper motors.</p>
-            </Card>
-            <Card src={paperTrader} alt='Screenshot of Website' title='PaperTrader'>
-              <p>PaperTrader gives users access to real stock market data and charts in order to make informed buy and sell decisions with play money.</p>
-            </Card>  
-            <Card src={heicTool} alt='Screenshot of HEIC Conversion Tool Software' title='HEIC Conversion Tool'>
-              <p>Allows users to convert entire folders of HEIC (iPhone) photos to JPG or PNG formats.</p>
-            </Card>            
-          </div>
+          <Gallery />
         </section>  
 
         {/* Footer */}
