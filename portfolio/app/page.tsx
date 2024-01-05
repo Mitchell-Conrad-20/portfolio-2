@@ -96,12 +96,14 @@ export default function Home() {
       <main className={"bg-white text-gray dark:bg-gray dark:text-white"}>
 
         {/* Splash Section */}
-        <section className="min-h-screen px-10">
+        <section className="min-h-screen lg:flex lg:flex-col lg:justify-center">
           {/* Navbar */}
-          <Navbar darkModeToggle = { () => setDark(!dark) } />
+          <div className='px-10 lg:top-0 lg:absolute lg:w-full'>
+            <Navbar darkModeToggle = { () => setDark(!dark) } />
+          </div>
 
           {/* Splash Content */}
-          <div className='text-center lg:flex lg:justify-center lg:text-left'>
+          <div className='px-10 text-center lg:flex lg:justify-center lg:text-left lg:h-full'>
             <div className='flex justify-center mb-5 mx-auto bg-gradient-to-br from-analagous1 to-primary rounded-full w-72 h-72 lg:mx-0'>
               <Image src={headshotSquareClear} alt='Headshot of Mitchell Conrad' className='relative rounded-full m-1 bg-white dark:bg-gray'/>
             </div>
