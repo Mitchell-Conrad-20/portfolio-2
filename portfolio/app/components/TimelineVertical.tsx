@@ -7,8 +7,8 @@ const TimelineVertical = () => {
         <div className='col-span-3'/>
         <div className='flex'>
             <div className='flex-grow h-0.5' />
-            <div className='w-2 h-auto rounded-t-md bg-gray dark:bg-white' />
-            <div className='flex-grow h-0.5 mt-6 rounded-r-md bg-gray dark:bg-white' />
+            <div className='w-2 h-auto rounded-t-md bg-white' />
+            <div className='flex-grow h-0.5 mt-6 rounded-r-md bg-white' />
         </div>
         <div className='col-span-3 pt-3'>
             <p className='font-bold'>York College of Pennsylvania</p>
@@ -22,9 +22,9 @@ const TimelineVertical = () => {
         <div className='flex justify-center'>
             <div className='flex-grow h-0.5 mt-6' />
             <div className='w-2 h-20' />
-            <div className='w-2 h-full mx-2 bg-gray dark:bg-white' />
+            <div className='w-2 h-full mx-2 bg-white' />
             <div className='w-2 h-full rounded-t-md bg-analagous1' />
-            <div className='flex-grow h-0.5 mt-6 rounded-r-md bg-gray dark:bg-white' />
+            <div className='flex-grow h-0.5 mt-6 rounded-r-md bg-white' />
         </div>
         <div className='col-span-3 pt-3'>
             <p className='font-bold'>Computer Science Tutor</p>
@@ -39,9 +39,9 @@ const TimelineVertical = () => {
             <p className='text-sm'>Software Engineering Intern</p>
         </div>
         <div className='flex justify-center'>
-            <div className='flex-grow h-0.5 mt-6 rounded-r-md bg-gray dark:bg-white' />
+            <div className='flex-grow h-0.5 mt-6 rounded-r-md bg-white' />
             <div className='w-2 h-20 rounded-md bg-triadic2' />
-            <div className='w-2 h-full mx-2 bg-gray dark:bg-white' />
+            <div className='w-2 h-full mx-2 bg-white' />
             <div className='w-2 h-full bg-analagous1' />
             <div className='flex-grow h-0.5 mt-6' />
         </div>
@@ -52,7 +52,7 @@ const TimelineVertical = () => {
         <div className='flex justify-center'>
             <div className='flex-grow h-0.5 mt-6' />
             <div className='w-2 h-20' />
-            <div className='w-2 h-20 mx-2 bg-gray dark:bg-white' />
+            <div className='w-2 h-20 mx-2 bg-white' />
             <div className='w-2 h-20 bg-analagous1' />
             <div className='flex-grow h-0.5 mt-6' />
         </div>
@@ -65,9 +65,9 @@ const TimelineVertical = () => {
             <p className='text-sm'>Controls Engineering Intern</p>
         </div>
         <div className='flex justify-center'>
-            <div className='flex-grow h-0.5 mt-6 rounded-r-md bg-gray dark:bg-white' />
+            <div className='flex-grow h-0.5 mt-6 rounded-r-md bg-white' />
             <div className='w-2 h-20 rounded-md bg-triadic2' />
-            <div className='w-2 h-full mx-2 bg-gray dark:bg-white' />
+            <div className='w-2 h-full mx-2 bg-white' />
             <div className='w-2 h-full bg-analagous1' />
             <div className='flex-grow h-0.5 mt-6' />
         </div>
@@ -78,7 +78,7 @@ const TimelineVertical = () => {
         <div className='flex justify-center'>
             <div className='flex-grow h-0.5 mt-6' />
             <div className='w-2 h-20' />
-            <div className='w-2 h-20 mx-2 bg-gray dark:bg-white' />
+            <div className='w-2 h-20 mx-2 bg-white' />
             <div className='w-2 h-20 bg-analagous1' />
             <div className='flex-grow h-0.5 mt-6' />
         </div>
@@ -91,9 +91,9 @@ const TimelineVertical = () => {
             <p className='text-sm'>Controls Engineering Intern</p>
         </div>
         <div className='flex justify-center'>
-            <div className='flex-grow h-0.5 mt-6 rounded-r-md bg-gray dark:bg-white' />
+            <div className='flex-grow h-0.5 mt-6 rounded-r-md bg-white' />
             <div className='w-2 h-20 rounded-md bg-triadic2' />
-            <div className='w-2 h-full mx-2 bg-gray dark:bg-white' />
+            <div className='w-2 h-full mx-2 bg-white' />
             <div className='w-2 h-full bg-analagous1' />
             <div className='flex-grow h-0.5 mt-6' />
         </div>
@@ -104,7 +104,7 @@ const TimelineVertical = () => {
         <div className='flex justify-center'>
             <div className='flex-grow h-0.5 mt-6' />
             <div className='w-2 h-20' />
-            <div className='w-2 h-20 mx-2 rounded-b-md bg-gray dark:bg-white' />
+            <div className='w-2 h-20 mx-2 rounded-b-md bg-white' />
             <div className='w-2 h-20 rounded-b-md bg-analagous1' />
             <div className='flex-grow h-0.5 mt-6' />
         </div>

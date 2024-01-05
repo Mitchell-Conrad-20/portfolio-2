@@ -8,13 +8,13 @@ const About = () => {
         <div className='md:flex md:justify-center md:gap-x-10'>
             {/* About */}
             <div className='md:1/2 lg:w-1/3'>
-                <h3 className='text-xl py-5'>About</h3>
+                <h3 className='text-xl pb-5'>About</h3>
                 <p className='leading-loose'>During my time at York College of Pennsylvania, I completed three internships for two companies and gained over a year of work experience. During these internships, I contributed to a variety of projects and learned many valuable skills.</p>
             </div>
 
             {/* Skills */}
             <div className=' md:text-left'>
-                <h3 className='text-xl py-5'>Skills</h3>
+                <h3 className='text-xl pb-5 pt-10 md:pt-0'>Skills</h3>
                 <div className=''>
                 <div className='flex justify-center gap-x-20 flex-col'>
                     <div className=''>

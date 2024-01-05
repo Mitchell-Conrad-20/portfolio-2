@@ -110,17 +110,8 @@ export default function Home() {
         </section>
 
         {/* Experience Section */}
-        <section className='py-10 px-10 bg-gray text-white dark:bg-[rgba(255,255,255,0.05)]'>
+        <section className='min-h-screen py-10 px-10 bg-gray text-white dark:bg-[rgba(255,255,255,0.05)] md:flex md:flex-col md:justify-center'>
           <Experience />
-        </section>
-        
-        {/* Timeline Section */}
-        <section className='py-10 px-10 lg:px-20'>
-          {/* Horizontal Timeline (Large Screens Only) */}
-          <div className='hidden lg:block'><Timeline /></div>
-
-          {/* Vertical Timeline */}
-          <div className='lg:hidden'><TimelineVertical/></div>
         </section>
 
         {/* Gallery Section */}
