@@ -5,7 +5,6 @@ import Card from './components/Card'
 import Modal from './components/Modal'
 import Button from './components/Button'
 import Notification from './components/Notification'
-import { AiFillLinkedin, AiFillGithub, AiFillPhone, AiFillMail } from 'react-icons/ai'
 import { DiReact, DiJava, DiJsBadge, DiCss3, DiHtml5, DiPython } from "react-icons/di";
 import { SiCsharp, SiCplusplus, SiC, SiArduino, SiOpencv, SiNvidia } from "react-icons/si";
 import headshotSquareClear from '../public/images/headshot-square-clear.png'
@@ -18,6 +17,7 @@ import paperTrader from '../public/images/paperTrader.png'
 import heicTool from '../public/images/HEIC-Conversion-Tool-Graphic.png'
 import { useState, useEffect } from 'react'
 import TimelineVertical from './components/TimelineVertical'
+import Socials from './components/Socials'
 
 export default function Home() {
   // Dark Mode - Uses user preference first. User an opt. to switch at any point
@@ -93,46 +93,41 @@ export default function Home() {
   return (
     <div className={(dark ? "dark" : "")}>
       <main className={"bg-white text-gray dark:bg-gray dark:text-white"}>
+
+        {/* Splash Section */}
         <section className="min-h-screen px-10">
+          {/* Navbar */}
           <Navbar darkModeToggle = { () => setDark(!dark) } />
 
-          <div className='text-center'>
-            {/* Gradient Text: text-transparent font-bold text-4xl bg-clip-text bg-gradient-to-r from-analagous1 to-primary */}
-            <h2 className='text-transparent font-bold text-4xl bg-clip-text bg-gradient-to-br from-analagous1 to-primary'>Mitchell Conrad</h2>
-            <h3 className='text-xl py-2'>Computer Engineer</h3>
-            <p className='leading-8 md:w-144 md:mx-auto'>
-              Swift learner and highly motivated engineer. Graduating August 2024. Seeking full-time roles in embedded systems, software, and hardware.
-            </p>
-          </div>
-
-          <div className='flex justify-center gap-5 text-4xl py-5'>
-            <a href='https://www.linkedin.com/in/mitch-conrad/' target='_blank' rel='noreferrer'>
-              <AiFillLinkedin />
-            </a>
-            <a href='https://github.com/Mitchell-Conrad-20' target='_blank' rel='noreferrer'>
-              <AiFillGithub />
-            </a>
-            <AiFillPhone className='cursor-pointer' onClick={()=> {
-                setPhone(true)
-                navigator.clipboard.writeText('4845029014') 
-              }
-            }/>
-            <AiFillMail className='cursor-pointer' onClick={()=> {
-                setEmail(true)
-                navigator.clipboard.writeText('mconrad4@ycp.edu')
-              }
-            }/>
-          </div>
-
-          <div className='flex justify-center'>
-            <div className='flex justify-center align-middle bg-gradient-to-br from-analagous1 to-primary rounded-full w-72 h-72'>
+          {/* Splash Content */}
+          <div className='text-center lg:flex lg:justify-center lg:text-left'>
+            <div className='flex justify-center mb-5 mx-auto bg-gradient-to-br from-analagous1 to-primary rounded-full w-72 h-72 lg:mx-0'>
               <Image src={headshotSquareClear} alt='Headshot of Mitchell Conrad' className='relative rounded-full m-1 bg-white dark:bg-gray'/>
             </div>
+
+            <div className='px-10'>
+              {/* Main Title */}
+              <h2 className='text-transparent font-bold text-4xl bg-clip-text bg-gradient-to-br from-analagous1 to-primary'>Mitchell Conrad</h2>
+              <h3 className='text-xl py-2'>Computer Engineer</h3>
+
+              {/* Terminal Style Intro */}
+              <div className="mx-auto text-left shadow-2xl rounded-lg my-2 dark:bg-[rgba(255,255,255,0.05)]">
+                <div className="px-5 py-3 leading-loose">
+                  <p>{">"} Swift learner and highly motivated engineer.</p>
+                  <p>{">"} Seeking a full-time role in embedded systems, software, or hardware.</p>
+                  <p>{">"} Graduating August 2024.</p>
+                </div>
+              </div>
+
+              {/* Social Links */}
+              <div className='py-5 flex justify-center lg:justify-start'>
+                <Socials setPhone={ () => setPhone(true)} setEmail={ () => setEmail(true)} />
+              </div>
+
+            </div>
+
           </div>
 
-          {/* <div className='flex justify-center align-middle bg-gradient-to-br from-analagous1 to-primary rounded-lg w-72 h-72'>
-            <Image src={headshotSquareClear} alt='Headshot of Mitchell Conrad' className='rounded-lg relative m-1 bg-white dark:bg-gray'/>
-          </div> */}
         </section>
 
         {/* Experience Section */}
@@ -238,24 +233,9 @@ export default function Home() {
         {/* Footer */}
         <section className='text-center py-10 text-white bg-gray dark:bg-[rgba(255,255,255,0.05)]'>
           <h3 className='text-xl'>Reach Out!</h3>  
-          <div className='flex justify-center gap-5 text-4xl py-5'>
-            <a href='https://www.linkedin.com/in/mitch-conrad/' target='_blank' rel='noreferrer'>
-              <AiFillLinkedin />
-            </a>
-            <a href='https://github.com/Mitchell-Conrad-20' target='_blank' rel='noreferrer'>
-              <AiFillGithub />
-            </a>
-            <AiFillPhone className='cursor-pointer' onClick={()=> {
-                setPhone(true)
-                navigator.clipboard.writeText('4845029014') 
-              }
-            }/>
-            <AiFillMail className='cursor-pointer' onClick={()=> {
-                setEmail(true)
-                navigator.clipboard.writeText('mconrad4@ycp.edu')
-              }
-            }/>
-          </div>    
+          <div className='flex justify-center py-5'>
+            <Socials setPhone={ () => setPhone(true)} setEmail={ () => setEmail(true)} />
+          </div>
         </section>
 
         {/* Notification Popups */}
