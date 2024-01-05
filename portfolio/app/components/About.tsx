@@ -9,7 +9,9 @@ const About = () => {
             {/* About */}
             <div className='md:1/2 lg:w-1/3'>
                 <h3 className='text-xl pb-5'>About</h3>
-                <p className='leading-loose'>During my time at York College of Pennsylvania, I completed three internships for two companies and gained over a year of work experience. During these internships, I contributed to a variety of projects and learned many valuable skills.</p>
+                <p className='leading-loose'>I began developing software at a very young age. I used to rush home from middle school to get to work. This passion eventually led me to York College of Pennsylvania, where I studied to become a computer engineer.</p>
+                <br />
+                <p className='leading-loose'>While interning at Becton Dickinson and MDI, I contributed to a variety of projects and learned many valuable skills. Over the course of three internships, I developed more than a year of work experience.</p>
             </div>
 
             {/* Skills */}
