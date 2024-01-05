@@ -164,7 +164,7 @@ export default function Home() {
         </section>
         
         {/* Timeline Section */}
-        <section className='py-10 px-10'>
+        <section className='py-10 px-10 lg:px-20'>
           {/* Horizontal Timeline (Large Screens Only) */}
           <div className='hidden lg:block'><Timeline /></div>
 
