@@ -13,8 +13,7 @@ import Socials from './components/Socials'
 import Gallery from './components/Gallery'
 import About from './components/About'
 import Splash from './components/Splash'
-import Experience
- from './components/Experience'
+import Experience from './components/Experience'
 
 export default function Home() {
   // Dark Mode - Uses user preference first. User an opt. to switch at any point
@@ -115,7 +114,7 @@ export default function Home() {
         </section>
 
         {/* Gallery Section */}
-        <section className='px-10'>
+        <section className='flex flex-col justify-center align-middle py-10 px-10 min-h-screen'>
           <Gallery />
         </section>  
 
