@@ -24,6 +24,7 @@ const config: Config = {
       'gray': '#0D0D0D',
       'lightGray': '#333333',
       'white': '#FFFFFF',
+      'success': '#228B22',
       'transparent': 'rgba(225, 225, 225, 0)',
     },
     fontFamily: {

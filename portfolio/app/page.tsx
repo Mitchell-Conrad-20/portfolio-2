@@ -9,6 +9,7 @@ import Gallery from './components/Gallery'
 import About from './components/About'
 import Splash from './components/Splash'
 import Experience from './components/Experience'
+import Link from 'next/link'
 
 export default function Home() {
   // Dark Mode - Uses user preference first. User an opt. to switch at any point
@@ -118,6 +119,7 @@ export default function Home() {
           <h3 className='text-xl'>Reach Out!</h3>  
           <div className='flex justify-center py-5'>
             <Socials setPhone={ () => setPhone(true)} setEmail={ () => setEmail(true)} />
+            <Link href="/resume" className='text-white font-semibold border-2 border-white hover:bg-white hover:text-gray dark:hover:text-lightGray px-3 py-1.5 rounded-md ml-4'>Resume</Link>
           </div>
         </section>
 
