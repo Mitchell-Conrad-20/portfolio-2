@@ -11,7 +11,7 @@ const Gallery = () => {
   return (
     <>
       <h3 className='text-xl text-center'>Projects</h3>
-      <p className='text-center pt-5 md:w-2/3 lg:w-1/2 mx-auto'>A collection of projects completed for school, hackathons, or personal endevours. Excludes projects from formal work experience.</p>
+      <p className='text-center pt-5 md:w-2/3 lg:w-1/2 mx-auto'>A collection of projects completed for school, hackathons, and personal endevours. Excludes projects from formal work experience.</p>
       <div className='flex flex-row flex-wrap justify-center py-10 gap-10 lg:px-24 xl:px-44'>
         <Card src={rifle} alt='Rifle for VR Games' title='Immersive Recoil for VR'>
           <span className='text-complementary border-complementary text-xs border-2 rounded-md p-0.5 mr-0.5'>Python</span>
