@@ -20,7 +20,7 @@ const Modal = (props: { title: string, open: boolean, handleClose: () => void, c
 
             {/* Modal Content */}
             <div id='content'
-                className='w-60 flex flex-col bg-white dark:bg-lightGray text-center p-5 rounded-lg'>
+                className='flex flex-col bg-white dark:bg-lightGray text-center p-5 rounded-lg'>
                 <div className='flex justify-between'>
                     <h1 className='text-xl'>{ props.title }</h1>
                     <AiOutlineClose className='mt-1 text-xl cursor-pointer' onClick={ () => props.handleClose() } />

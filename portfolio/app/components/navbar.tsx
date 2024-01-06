@@ -1,5 +1,6 @@
 'use client'
 import {BsFillMoonStarsFill} from 'react-icons/bs';
+import Link from 'next/link';
 
 const Navbar = ( props: { darkModeToggle:()=>void } ) => {
   return (
@@ -7,7 +8,7 @@ const Navbar = ( props: { darkModeToggle:()=>void } ) => {
         <h1 className='font-bold text-xl'>Mitchell Conrad</h1>
         <ul className='flex items-center'>
             <li><BsFillMoonStarsFill onClick={ () => props.darkModeToggle() } className='cursor-pointer text-2xl' /></li>
-            <li><a href="#" className='text-white bg-gradient-to-br from-analagous1 to-primary px-4 py-2 rounded-md ml-4'>Resume</a></li>
+            <li><Link href="/resume" className='text-white bg-gradient-to-br from-analagous1 to-primary px-4 py-2 rounded-md ml-4'>Resume</Link></li>
         </ul>
     </nav>
   )

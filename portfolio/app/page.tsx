@@ -14,7 +14,7 @@ export default function Home() {
   // Dark Mode - Uses user preference first. User an opt. to switch at any point
   const [dark, setDark] = useState<boolean>(false)
 
-  // Set Modal States
+  // Set Notification States
   const [phone, setPhone] = useState<boolean>(false)
   const [email, setEmail] = useState<boolean>(false)
 
