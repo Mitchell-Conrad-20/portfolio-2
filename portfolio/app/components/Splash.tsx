@@ -1,6 +1,7 @@
 import React from 'react'
 import Image from 'next/image'
 import Socials from './Socials'
+import Typewriter from 'typewriter-effect';
 import headshotSquareClear from '../../public/images/headshot-square-clear.png'
 import { VscChromeMinimize , VscChromeMaximize, VscChromeClose } from "react-icons/vsc";
 
@@ -31,10 +32,24 @@ const Splash = (props: {setPhone: () => void, setEmail: () => void}) => {
                             </span>
                         </div>
                     </div>
-                    <div className="px-5 py-3 leading-loose">
-                        <p>{">"} Swift learner and highly motivated engineer.</p>
+                    <div className="px-5 py-3 leading-loose md:h-32 lg:w-144 lg:h-32">
+                        {/* <p>{">"} Swift learner and highly motivated engineer.</p>
                         <p>{">"} Seeking a full-time role in embedded systems, software, or hardware.</p>
-                        <p>{">"} Graduating August 2024.</p>
+                        <p>{">"} Graduating August 2024.</p> */}
+
+                        <Typewriter
+                            onInit={(typewriter) => {
+                            typewriter.typeString('> Swift learner and highly motivated engineer.<br />> ')
+                                .pauseFor(500)
+                                .typeString('Seeking a full-time role in embedded systems, software, or hardware.<br />> ')
+                                .pauseFor(500)
+                                .typeString('Graduating August 2024.')
+                                .callFunction(() => {
+                                })
+                                .start();
+                            }}
+                        />
+                        
                     </div>
                 </div>
 

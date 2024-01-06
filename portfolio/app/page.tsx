@@ -10,6 +10,8 @@ import About from './components/About'
 import Splash from './components/Splash'
 import Experience from './components/Experience'
 import Link from 'next/link'
+import FullScreenModal from './components/FullScreenModal'
+import Background from './components/Background'
 
 export default function Home() {
   // Dark Mode - Uses user preference first. User an opt. to switch at any point
@@ -97,6 +99,8 @@ export default function Home() {
           <Splash setPhone={ () => setPhone(true)} setEmail={ () => setEmail(true)} />
 
         </section>
+
+        <Background />
 
         {/* About Section */}
         {/* // add icons of the skills i used in each project and internship to the cards */}

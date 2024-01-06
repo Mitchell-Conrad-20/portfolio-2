@@ -26,7 +26,7 @@ const Gallery = () => {
         <Card src={drone} alt='Drone' title='Custom Drone'>
           <span className='text-analagous1 border-analagous1 text-xs border-2 rounded-md p-0.5 mr-0.5'>Arduino</span>
           <span className='text-success border-success text-xs border-2 rounded-md p-0.5 mr-0.5'>Electrical Design</span>
-          <p className='pt-0.5'>Created a drone using an Arduino based flight controller.</p>
+          <p className='pt-0.5'>Created a drone using an Arduino based flight controller. Developed a protoboard to control motors with PWM.</p>
         </Card>
         <Card src={synth} alt='MIDI Synthesizer' title='Stepper Motor MIDI Synth'>
           <span className='text-analagous1 border-analagous1 text-xs border-2 rounded-md p-0.5 mr-0.5'>Arduino</span>

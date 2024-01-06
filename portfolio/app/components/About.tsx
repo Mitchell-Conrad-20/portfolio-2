@@ -24,8 +24,8 @@ const About = () => {
                     <div className='text-4xl flex justify-start gap-x-5 py-2'>
                         <DiHtml5 />
                         <DiCss3 />
-                        <DiReact />
                         <DiJsBadge />
+                        <DiReact />
                     </div>
                     </div>
                     <div className=''>
