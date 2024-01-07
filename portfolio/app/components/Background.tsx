@@ -169,7 +169,10 @@ const Background = (props: { dark: boolean }) => {
       }, [props.dark]);
     
     return (
-        <div ref={refContainer} className='h-screen' />
+        <>
+            <div ref={refContainer} className='h-screen motion-reduce:hidden' />
+            <div className='h-screen hidden motion-reduce:block' />
+        </>
     )
 }
 

@@ -2,6 +2,33 @@
 @tailwind components;
 @tailwind utilities;
 
+.gradient-border-mask {
+  display: flow-root;
+  position: relative;
+  transition: background-color 1000ms ease-in-out;
+}
+
+.gradient-border-mask:hover{
+  border-radius: 0.375rem;
+  background: linear-gradient(135deg, #02A3EE, #022EEE) border-box;
+}
+
+.gradient-border-mask::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border-radius: 0.375rem;
+  border: 2px solid transparent;
+  background: linear-gradient(135deg, #02A3EE, #022EEE) border-box;
+  -webkit-mask: linear-gradient(#fff 0 0) padding-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: destination-out;
+  mask-composite: exclude;
+}
+
+
 /* canvas {
   display: block;
   overflow:hidden;

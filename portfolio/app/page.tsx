@@ -122,7 +122,7 @@ export default function Home() {
           <h3 className='text-xl'>Reach Out!</h3>  
           <div className='flex justify-center py-5'>
             <Socials setPhone={ () => setPhone(true)} setEmail={ () => setEmail(true)} />
-            <Link href="/resume" className='text-white font-semibold border-2 border-white hover:bg-white hover:text-gray dark:hover:text-lightGray px-3 py-1.5 rounded-md ml-4'>Resume</Link>
+            <a href="/resume" target='_blank' rel='noreferrer' className='text-md text-white font-semibold border-2 border-white hover:bg-white transition ease-in-out hover:text-gray dark:hover:text-lightGray px-2 pt-1 rounded-md ml-4'>Resume</a>
           </div>
         </section>
 

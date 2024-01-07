@@ -8,7 +8,6 @@ const Navbar = ( props: { darkModeToggle:()=>void } ) => {
         <h1 className='font-bold text-xl'>Mitchell Conrad</h1>
         <ul className='flex items-center'>
             <li><BsFillMoonStarsFill onClick={ () => props.darkModeToggle() } className='cursor-pointer text-2xl' /></li>
-            <li><Link href="/resume" className='text-white bg-gradient-to-br from-analagous1 to-primary px-4 py-2 rounded-md ml-4'>Resume</Link></li>
         </ul>
     </nav>
   )

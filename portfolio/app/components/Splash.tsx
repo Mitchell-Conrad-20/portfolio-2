@@ -55,7 +55,8 @@ const Splash = (props: {setPhone: () => void, setEmail: () => void}) => {
 
                 {/* Social Links */}
                 <div className='py-5 flex justify-center lg:justify-start'>
-                <Socials setPhone={ () => props.setPhone()} setEmail={ () => props.setEmail()} />
+                    <Socials setPhone={ () => props.setPhone()} setEmail={ () => props.setEmail()} />
+                    <a href="/resume" target='_blank' rel='noreferrer' className='text-md text-gray dark:text-white font-semibold border-2 border-gray dark:border-white hover:bg-gray dark:hover:bg-white hover:text-white dark:hover:text-gray transition ease-in-out px-2 pt-1 rounded-md ml-4'>Resume</a>
                 </div>
 
             </div>
