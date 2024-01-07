@@ -19,7 +19,7 @@ const Reveal:FC<RevealProps> = ({ children, rightToLeft=false }) => {
     }, [isInView])
 
   return (
-    <div ref={ ref } className=''>
+    <div ref={ ref } className='overflow-hidden'>
         { !rightToLeft &&
             <motion.div
                 variants={{
