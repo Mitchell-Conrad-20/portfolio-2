@@ -19,7 +19,7 @@ const Splash = (props: {setPhone: () => void, setEmail: () => void}) => {
                 <h3 className='text-xl py-2'>Computer Engineer</h3>
 
                 {/* Terminal Style Intro */}
-                <div className="mx-auto text-left shadow-2xl rounded-lg my-2 dark:bg-[rgba(255,255,255,0.05)]">
+                <div className="mx-auto text-left shadow-2xl rounded-lg my-2 bg-white dark:bg-gray">
                     <div className='py-0.5 rounded-t-lg flex justify-between align-middle px-1 gap-x-1 bg-gray dark:bg-lightGray text-white'>
                         <div>
                             <p className='text-xs pl-2'>Terminal</p>
