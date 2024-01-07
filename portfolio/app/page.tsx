@@ -10,6 +10,8 @@ import About from './components/About'
 import Splash from './components/Splash'
 import Experience from './components/Experience'
 import Link from 'next/link'
+import FullScreenModal from './components/FullScreenModal'
+import Background from './components/Background'
 
 export default function Home() {
   // Dark Mode - Uses user preference first. User an opt. to switch at any point
@@ -86,8 +88,10 @@ export default function Home() {
     <div className={(dark ? "dark" : "")}>
       <main className={"bg-white text-gray dark:bg-gray dark:text-white"}>
 
+        <Background dark={dark} />
+
         {/* Splash Section */}
-        <section className="min-h-screen lg:flex lg:flex-col lg:justify-center">
+        <section className="min-h-screen lg:flex lg:flex-col lg:justify-center absolute top-0 left-0 right-0">
           {/* Navbar */}
           <div className='px-10 lg:top-0 lg:absolute lg:w-full'>
             <Navbar darkModeToggle = { () => setDark(!dark) } />
@@ -95,7 +99,6 @@ export default function Home() {
 
           {/* Splash Content */}
           <Splash setPhone={ () => setPhone(true)} setEmail={ () => setEmail(true)} />
-
         </section>
 
         {/* About Section */}
