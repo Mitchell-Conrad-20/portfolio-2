@@ -21,7 +21,7 @@ const Background = (props: { dark: boolean }) => {
 
         // Get container dimensions
         let containerRect = refContainer.current?.getBoundingClientRect()
-        let width, height
+        let width: number, height: number
         if(containerRect == null){
             width = window.innerWidth
             height = window.innerHeight
@@ -155,8 +155,6 @@ const Background = (props: { dark: boolean }) => {
                 particlesMesh.rotation.x += 0.001
                 particlesMesh.rotation.y += 0.001
             }
-
-            console.log(elapsedTime)
 
             // Render the scene from the cameras perspective
             renderer.render(scene, camera);
