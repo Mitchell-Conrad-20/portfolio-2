@@ -114,6 +114,8 @@ const Background = (props: { dark: boolean }) => {
 
         let prevX = -1
         let prevY = -1
+        let xSign = 1
+        let ySign = 1
 
         // Animate Funciton
         const animate = () =>{
@@ -127,16 +129,18 @@ const Background = (props: { dark: boolean }) => {
             if (mouseX > -1 && mouseY > -1){
                 if (prevX > -1 && prevY > -1){
                     if (prevX == mouseX){
-                        particlesMesh.rotation.y += 0.001
+                        particlesMesh.rotation.y += (0.001 * xSign)
                     }
                     else{
-                        particlesMesh.rotation.y = mouseX * 0.001
+                        xSign = Math.sign(mouseX - prevX)
+                        particlesMesh.rotation.y += (mouseX * 0.00001 * xSign)
                     }
                     if (prevY == mouseY){
-                        particlesMesh.rotation.x += 0.001
+                        particlesMesh.rotation.x += (0.001 * ySign)
                     }
                     else{
-                        particlesMesh.rotation.x = mouseY * 0.001
+                        ySign = Math.sign(mouseY - prevY)
+                        particlesMesh.rotation.x += (mouseY * 0.00001 * ySign)
                     }
                 }
                 else{
