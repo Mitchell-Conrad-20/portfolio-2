@@ -38,6 +38,9 @@ export default function Home() {
   const experienceInView = useInView(experienceSectionCheck, { once: false })
   const galleryInView = useInView(gallerySectionCheck, { once: false })
 
+  // Gallery Item Full Screen Modal States
+  const [thunderDonkey, setThunderDonkey] = useState<boolean>(false)
+
   // Set Notification States
   const [phone, setPhone] = useState<boolean>(false)
   const [email, setEmail] = useState<boolean>(false)
@@ -166,14 +169,14 @@ export default function Home() {
         {/* Experience Section */}
         <section ref={ experienceSection } className='min-h-screen py-10 px-10 bg-gray text-white dark:bg-[rgba(255,255,255,0.05)] md:flex md:flex-col md:justify-center'>
           <div ref={ experienceSectionCheck }>
-            <Experience />
+            <Experience/>
           </div>
         </section>
 
         {/* Gallery Section */}
         <section ref={ gallerySection } className='flex flex-col justify-center align-middle py-10 px-10 min-h-screen'>
           <div ref={ gallerySectionCheck }>
-            <Gallery />
+            <Gallery handleOpenArray={ [()=> setThunderDonkey(true)] } />
           </div>
         </section>  
 
@@ -190,6 +193,9 @@ export default function Home() {
         <NavArrows showUp={ !splashInView } showDown={ !galleryInView } handleUpClick={ () => scrollUp() } handleDownClick={ () => scrollDown() } />
 
         {/* Full Screen Modals */}
+        {/* <FullScreenModal title='Test' open={ thunderDonkey } handleClose={ () => setThunderDonkey(false) }>
+          <p>Test</p>
+        </FullScreenModal> */}
 
         {/* Phone Notification Popup */}
         <Notification title="Phone Number Copied" open={phone} percent={phonePercent} handleClose={() => setPhone(false)}>

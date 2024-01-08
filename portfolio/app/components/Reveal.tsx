@@ -7,7 +7,7 @@ interface RevealProps {
     rightToLeft?:boolean,
     delay?:number,
     overflowHidden?:boolean
-  }
+}
 
 const Reveal:FC<RevealProps> = ({ children, rightToLeft=false, delay=0.250, overflowHidden=true }) => {
     const ref = useRef(null)

@@ -8,7 +8,8 @@ import synth from '../../public/images/midiFront.jpg'
 import paperTrader from '../../public/images/paperTrader.png'
 import heicTool from '../../public/images/HEIC-Conversion-Tool-Graphic.png'
 
-const Gallery = () => {
+const Gallery = (props: { handleOpenArray:Array<() => void>
+ }) => {
   return (
     <>
       <Reveal>
@@ -19,7 +20,7 @@ const Gallery = () => {
       </Reveal>
       <div className='flex flex-row flex-wrap justify-center py-10 gap-10 lg:px-24 xl:px-44'>
           <Reveal overflowHidden={false} delay={0.500}>
-            <Card src={rifle} alt='Rifle for VR Games' title='Immersive Recoil for VR'>
+            <Card onClick={ () => props.handleOpenArray[0]() } src={rifle} alt='Rifle for VR Games' title='Immersive Recoil for VR'>
               <span className='text-complementary border-complementary text-xs border-2 rounded-md p-0.5 mr-0.5'>Python</span>
               <span className='text-analagous1 border-analagous1 text-xs border-2 rounded-md p-0.5 mr-0.5'>Arduino</span>
               <p className='pt-0.5'>Generates realistic recoil when firing weapons in VR. Simulates a variety of firearms using a rapid-firing pneumatic piston.</p>
