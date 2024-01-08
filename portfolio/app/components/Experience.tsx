@@ -1,6 +1,7 @@
 import React from 'react'
 import Timeline from './Timeline'
 import TimelineVertical from './TimelineVertical'
+import Reveal from './Reveal'
 
 const Experience = () => {
   return (
@@ -30,8 +31,10 @@ const Experience = () => {
                 <p>{"}"}</p>
             </div> */}
         {/* </div> */}
-            
-        <h3 className='text-xl pb-10'>Experience</h3>
+        
+        <Reveal>
+          <h3 className='text-xl pb-10'>Experience</h3>
+        </Reveal>
 
         {/* Horizontal Timeline (Large Screens Only) */}
         <div className='hidden lg:block'><Timeline /></div>

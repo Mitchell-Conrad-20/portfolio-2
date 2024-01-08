@@ -4,10 +4,12 @@ import { motion, useInView, useAnimationControls } from 'framer-motion'
 
 interface RevealProps {
     children: React.ReactNode,
-    rightToLeft?:boolean
+    rightToLeft?:boolean,
+    delay?:number,
+    overflowHidden?:boolean
   }
 
-const Reveal:FC<RevealProps> = ({ children, rightToLeft=false }) => {
+const Reveal:FC<RevealProps> = ({ children, rightToLeft=false, delay=0.250, overflowHidden=true }) => {
     const ref = useRef(null)
     const isInView = useInView(ref, { once: true })
     const mainControls = useAnimationControls()
@@ -19,7 +21,7 @@ const Reveal:FC<RevealProps> = ({ children, rightToLeft=false }) => {
     }, [isInView])
 
   return (
-    <div ref={ ref } className='overflow-hidden'>
+    <div ref={ ref } className={ overflowHidden ? 'overflow-hidden' : ''}>
         { !rightToLeft &&
             <motion.div
                 variants={{
@@ -30,7 +32,7 @@ const Reveal:FC<RevealProps> = ({ children, rightToLeft=false }) => {
                 animate={ mainControls }
                 transition={{
                     duration: 0.5,
-                    delay: 0.25
+                    delay: delay,
                 }}
             >
                 { children }
@@ -46,7 +48,7 @@ const Reveal:FC<RevealProps> = ({ children, rightToLeft=false }) => {
                 animate={ mainControls }
                 transition={{
                     duration: 0.5,
-                    delay: 0.25
+                    delay: delay,
                 }}
             >
                 { children }

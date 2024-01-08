@@ -1,4 +1,5 @@
 import React from 'react'
+import Reveal from './Reveal'
 
 const TimelineVertical = () => {
   return (
@@ -11,10 +12,12 @@ const TimelineVertical = () => {
             <div className='flex-grow h-0.5 mt-6 rounded-r-md bg-white' />
         </div>
         <div className='col-span-3 pt-3'>
-            <p className='font-bold'>York College of Pennsylvania</p>
-            <p className='text-sm font-semibold'>2020-2024</p>
-            <p className='text-sm'>B.S. Computer Engineering</p>
-            <p className='text-sm'>Mathematics Minor</p>
+            <Reveal rightToLeft>
+                <p className='font-bold'>York College of Pennsylvania</p>
+                <p className='text-sm font-semibold'>2020-2024</p>
+                <p className='text-sm'>B.S. Computer Engineering</p>
+                <p className='text-sm'>Mathematics Minor</p>
+            </Reveal>
         </div>
 
         {/* Row 2 */}
@@ -27,16 +30,20 @@ const TimelineVertical = () => {
             <div className='flex-grow h-0.5 mt-6 rounded-r-md bg-white' />
         </div>
         <div className='col-span-3 pt-3'>
-            <p className='font-bold'>Computer Science Tutor</p>
-            <p className='text-sm font-semibold'>2021-2024</p>
-            <p className='text-sm'>Java and C</p>
+            <Reveal rightToLeft>
+                <p className='font-bold'>Computer Science Tutor</p>
+                <p className='text-sm font-semibold'>2021-2024</p>
+                <p className='text-sm'>Java and C</p>
+            </Reveal>
         </div>
 
         {/* Row 3 */}
         <div className='col-span-3 pt-3 ml-auto'>
-            <p className='font-bold'>Becton Dickinson</p>
-            <p className='text-sm font-semibold'>May-Aug 2022</p>
-            <p className='text-sm'>Software Engineering Intern</p>
+            <Reveal>
+                <p className='font-bold'>Becton Dickinson</p>
+                <p className='text-sm font-semibold'>May-Aug 2022</p>
+                <p className='text-sm'>Software Engineering Intern</p>
+            </Reveal>
         </div>
         <div className='flex justify-center'>
             <div className='flex-grow h-0.5 mt-6 rounded-r-md bg-white' />
@@ -60,9 +67,11 @@ const TimelineVertical = () => {
 
         {/* Row 5 */}
         <div className='col-span-3 pt-3 ml-auto'>
-            <p className='font-bold'>MDI</p>
-            <p className='text-sm font-semibold'>Jan-May 2023</p>
-            <p className='text-sm'>Controls Engineering Intern</p>
+            <Reveal>
+                <p className='font-bold'>MDI</p>
+                <p className='text-sm font-semibold'>Jan-May 2023</p>
+                <p className='text-sm'>Controls Engineering Intern</p>
+            </Reveal>
         </div>
         <div className='flex justify-center'>
             <div className='flex-grow h-0.5 mt-6 rounded-r-md bg-white' />
@@ -86,9 +95,11 @@ const TimelineVertical = () => {
 
         {/* Row 7 */}
         <div className='col-span-3 pt-3 ml-auto'>
-            <p className='font-bold'>MDI</p>
-            <p className='text-sm font-semibold'>Aug-Dec 2023</p>
-            <p className='text-sm'>Controls Engineering Intern</p>
+            <Reveal>
+                <p className='font-bold'>MDI</p>
+                <p className='text-sm font-semibold'>Aug-Dec 2023</p>
+                <p className='text-sm'>Controls Engineering Intern</p>
+            </Reveal>
         </div>
         <div className='flex justify-center'>
             <div className='flex-grow h-0.5 mt-6 rounded-r-md bg-white' />
