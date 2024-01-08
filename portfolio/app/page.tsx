@@ -3,7 +3,7 @@ import Navbar from './components/Navbar'
 import Modal from './components/Modal'
 import Button from './components/Button'
 import Notification from './components/Notification'
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useRef } from 'react'
 import Socials from './components/Socials'
 import Gallery from './components/Gallery'
 import About from './components/About'
@@ -12,10 +12,30 @@ import Experience from './components/Experience'
 import Link from 'next/link'
 import FullScreenModal from './components/FullScreenModal'
 import Background from './components/Background'
+import NavArrows from './components/NavArrows'
+import { useInView } from 'framer-motion'
 
 export default function Home() {
   // Dark Mode - Uses user preference first. User an opt. to switch at any point
   const [dark, setDark] = useState<boolean>(false)
+
+  // Refs for scrolling tp section
+  const splashSection = useRef(null)
+  const aboutSection = useRef(null)
+  const experienceSection = useRef(null)
+  const gallerySection = useRef(null)
+
+  // Refs for checking inside the section
+  const splashSectionCheck = useRef(null)
+  const aboutSectionCheck = useRef(null)
+  const experienceSectionCheck = useRef(null)
+  const gallerySectionCheck = useRef(null)
+
+  // View intersection observers
+  const splashInView = useInView(splashSectionCheck, { once: false })
+  const aboutInView = useInView(aboutSectionCheck, { once: false })
+  const experienceInView = useInView(experienceSectionCheck, { once: false })
+  const galleryInView = useInView(gallerySectionCheck, { once: false })
 
   // Set Notification States
   const [phone, setPhone] = useState<boolean>(false)
@@ -84,6 +104,36 @@ export default function Home() {
       }
     },[emailPercent])
 
+    const scrollUp = () => {
+      // Scroll to Splash Section
+      if(aboutInView && !experienceInView){
+        splashSection.current && window.scrollTo({ top: (splashSection.current as HTMLElement).offsetTop, behavior: 'smooth' })
+      }
+      // Scroll to About Section
+      else if(experienceInView && !galleryInView){
+        aboutSection.current && window.scrollTo({ top: (aboutSection.current as HTMLElement).offsetTop, behavior: 'smooth' })
+      }
+      // Scroll to Experience Section
+      else{
+        experienceSection.current && window.scrollTo({ top: (experienceSection.current as HTMLElement).offsetTop, behavior: 'smooth' })
+      }
+    }
+
+    const scrollDown = () => {
+      // Scroll to About Section
+      if(splashInView){
+        aboutSection.current && window.scrollTo({ top: (aboutSection.current as HTMLElement).offsetTop, behavior: 'smooth' })
+      }
+      // Scroll to Experience Section
+      else if(aboutInView && !splashInView){
+        experienceSection.current && window.scrollTo({ top: (experienceSection.current as HTMLElement).offsetTop, behavior: 'smooth' })
+      }
+      // Scroll to Gallery
+      else if(experienceInView && !aboutInView){
+        gallerySection.current && window.scrollTo({ top: (gallerySection.current as HTMLElement).offsetTop, behavior: 'smooth' })
+      }
+    }
+
   return (
     <div className={(dark ? "dark" : "")}>
       <main className={"bg-white text-gray dark:bg-gray dark:text-white"}>
@@ -91,7 +141,7 @@ export default function Home() {
         <Background dark={dark} />
 
         {/* Splash Section */}
-        <section className="min-h-screen lg:flex lg:flex-col lg:justify-center absolute top-0 left-0 right-0">
+        <section ref={ splashSection } className="min-h-screen lg:flex lg:flex-col lg:justify-center absolute top-0 left-0 right-0">
           {/* Navbar */}
           <div className='px-10 lg:top-0 lg:absolute lg:w-full'>
             <Navbar darkModeToggle = { () => setDark(!dark) } />
@@ -99,21 +149,22 @@ export default function Home() {
 
           {/* Splash Content */}
           <Splash setPhone={ () => setPhone(true)} setEmail={ () => setEmail(true)} />
+
         </section>
 
         {/* About Section */}
-        {/* // add icons of the skills i used in each project and internship to the cards */}
-        <section className='py-10 min-h-screen px-10 md:flex md:flex-col md:justify-center'>
+        {/* add icons of the skills i used in each project and internship to the cards */}
+        <section ref={ aboutSection } className='py-10 min-h-screen px-10 md:flex md:flex-col md:justify-center'>
           <About />
         </section>
 
         {/* Experience Section */}
-        <section className='min-h-screen py-10 px-10 bg-gray text-white dark:bg-[rgba(255,255,255,0.05)] md:flex md:flex-col md:justify-center'>
+        <section ref={ experienceSection } className='min-h-screen py-10 px-10 bg-gray text-white dark:bg-[rgba(255,255,255,0.05)] md:flex md:flex-col md:justify-center'>
           <Experience />
         </section>
 
         {/* Gallery Section */}
-        <section className='flex flex-col justify-center align-middle py-10 px-10 min-h-screen'>
+        <section ref={ gallerySection } className='flex flex-col justify-center align-middle py-10 px-10 min-h-screen'>
           <Gallery />
         </section>  
 
@@ -125,6 +176,9 @@ export default function Home() {
             <a href="/resume" target='_blank' rel='noreferrer' className='text-md text-white font-semibold border-2 border-white hover:bg-white transition ease-in-out hover:text-gray dark:hover:text-lightGray px-2 pt-1 rounded-md ml-4'>Resume</a>
           </div>
         </section>
+
+        {/* Scroll Controls */}
+        <NavArrows showUp={ !splashInView } showDown={ !galleryInView } handleUpClick={ () => scrollUp() } handleDownClick={ () => scrollDown() } />
 
         {/* Notification Popups */}
 
