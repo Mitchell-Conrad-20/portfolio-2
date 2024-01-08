@@ -26,7 +26,7 @@ export default function Home() {
   const gallerySection = useRef(null)
 
   // Refs for checking inside the section
-  const splashSectionCheck = useRef(null)
+  const splashSectionCheck = useRef<HTMLDivElement | null>(null)
   const aboutSectionCheck = useRef(null)
   const experienceSectionCheck = useRef(null)
   const gallerySectionCheck = useRef(null)
@@ -148,24 +148,32 @@ export default function Home() {
           </div>
 
           {/* Splash Content */}
-          <Splash setPhone={ () => setPhone(true)} setEmail={ () => setEmail(true)} />
+          <div ref={ splashSectionCheck }>
+            <Splash setPhone={ () => setPhone(true)} setEmail={ () => setEmail(true)} />
+          </div>
 
         </section>
 
         {/* About Section */}
         {/* add icons of the skills i used in each project and internship to the cards */}
         <section ref={ aboutSection } className='py-10 min-h-screen px-10 md:flex md:flex-col md:justify-center'>
-          <About />
+          <div ref={ aboutSectionCheck }>
+            <About />
+          </div>
         </section>
 
         {/* Experience Section */}
         <section ref={ experienceSection } className='min-h-screen py-10 px-10 bg-gray text-white dark:bg-[rgba(255,255,255,0.05)] md:flex md:flex-col md:justify-center'>
-          <Experience />
+          <div ref={ experienceSectionCheck }>
+            <Experience />
+          </div>
         </section>
 
         {/* Gallery Section */}
         <section ref={ gallerySection } className='flex flex-col justify-center align-middle py-10 px-10 min-h-screen'>
-          <Gallery />
+          <div ref={ gallerySectionCheck }>
+            <Gallery />
+          </div>
         </section>  
 
         {/* Footer */}
