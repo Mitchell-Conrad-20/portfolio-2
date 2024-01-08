@@ -20,7 +20,7 @@ const FullScreenModal = (props: { title: string, open: boolean, handleClose: () 
 
             {/* Modal Content */}
             <div id='content'
-                className='flex flex-col w-screen h-screen bg-white dark:bg-lightGray text-center p-5 rounded-lg'>
+                className='flex flex-col w-screen h-screen bg-white dark:bg-lightGray text-center p-5'>
                 <div className='flex justify-between'>
                     <h1 className='text-xl'>{ props.title }</h1>
                     <AiOutlineClose className='mt-1 text-xl cursor-pointer' onClick={ () => props.handleClose() } />

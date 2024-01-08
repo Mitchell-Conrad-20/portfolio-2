@@ -1,15 +1,44 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
+import { motion, useInView, useAnimationControls } from 'framer-motion'
 import { AiOutlineClose } from 'react-icons/ai'
 
 const Notification = (props: { title: string, open: boolean, handleClose: () => void, percent: number, children: React.ReactNode}) => {
-    if(!props.open) 
-        return(<></>)
+    const [num,setNum] = useState('0%')
 
-    let num = props.percent + '%'
+    useEffect(() => {
+        if(props.open){
+            setNum(props.percent + '%')
+        }
+        else{
+            setNum('0%')
+        }
+    }, [props.open, props.percent])
+
+    const mainControls = useAnimationControls()
+    
+    useEffect(() => {
+        if (props.open){
+            mainControls.start("visible")
+        }
+        else{
+            mainControls.stop()
+            mainControls.start("hidden")
+        }
+    }, [props.open])
 
     return(
-        <div id='wrapper'
-            className='fixed top-0 left-0 right-0 flex justify-center'>
+        <motion.div id='wrapper'
+            className='fixed top-0 left-0 right-0 flex justify-center'
+            variants={{
+                hidden: { opacity: 0, y: -75 },
+                visible: { opacity: 1, y: 0 }
+            }}
+            initial="hidden"
+            animate={ mainControls }
+            transition={{
+                duration: 0.5,
+                delay: 0,
+            }}>
 
             {/* Notification Content */}
             <div id='content'
@@ -27,7 +56,7 @@ const Notification = (props: { title: string, open: boolean, handleClose: () => 
                     <div className='h-2 rounded-md bg-gradient-to-r from-analagous1 to-primary' style={{width: num}}/>
                 </div>
             </div>              
-        </div>
+        </motion.div>
     )
 }
 

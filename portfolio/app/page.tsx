@@ -13,6 +13,7 @@ import Link from 'next/link'
 import FullScreenModal from './components/FullScreenModal'
 import Background from './components/Background'
 import NavArrows from './components/NavArrows'
+import RevealRepeat from './components/RevealRepeat'
 import { useInView } from 'framer-motion'
 
 export default function Home() {
@@ -188,23 +189,21 @@ export default function Home() {
         {/* Scroll Controls */}
         <NavArrows showUp={ !splashInView } showDown={ !galleryInView } handleUpClick={ () => scrollUp() } handleDownClick={ () => scrollDown() } />
 
-        {/* Notification Popups */}
+        {/* Full Screen Modals */}
 
-        { phone && 
-          <Notification title="Phone Number Copied" open={phone} percent={phonePercent} handleClose={() => setPhone(false)}>
-            <a href='tel:484-502-9014'>
-              <p className='text-sm'>Open in App</p>
-            </a>
-          </Notification>
-        }
+        {/* Phone Notification Popup */}
+        <Notification title="Phone Number Copied" open={phone} percent={phonePercent} handleClose={() => setPhone(false)}>
+          <a href='tel:484-502-9014'>
+            <p className='text-sm'>Open in App</p>
+          </a>
+        </Notification>
 
-        { email && 
-          <Notification title="Email Copied" open={email} percent={emailPercent} handleClose={() => setEmail(false)}>
-            <a href='mailto:mconrad4@ycp.edu'>
-              <p className='text-sm'>Open in App</p>
-            </a>
-          </Notification>
-        }
+        {/* Email Notification Popup */} 
+        <Notification title="Email Copied" open={email} percent={emailPercent} handleClose={() => setEmail(false)}>
+          <a href='mailto:mconrad4@ycp.edu'>
+            <p className='text-sm'>Open in App</p>
+          </a>
+        </Notification>
 
       </main>
     </div>
