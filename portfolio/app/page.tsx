@@ -193,9 +193,22 @@ export default function Home() {
         <NavArrows showUp={ !splashInView } showDown={ !galleryInView } handleUpClick={ () => scrollUp() } handleDownClick={ () => scrollDown() } />
 
         {/* Full Screen Modals */}
-        {/* <FullScreenModal title='Test' open={ thunderDonkey } handleClose={ () => setThunderDonkey(false) }>
-          <p>Test</p>
-        </FullScreenModal> */}
+        <FullScreenModal title='' open={ thunderDonkey } handleClose={ () => setThunderDonkey(false) }>
+          <div className='flex flex-col justify-center align-middle w-full h-full'>
+            <div className='flex justify-center gap-10'>
+              <div className='md:w-3/4 lg:w-2/3'>
+                <h3 className='text-xl font-semibold'>Immersive Recoil for VR</h3>
+                <p className='text-sm font-semibold'>November 2023</p>
+                <p className='py-5'>Two classmates and I attended to YCP Hacks, an anual Hackathon at York College of Pennsylvania, where we set out to invent a way to improve user experience in Virtual Reality.</p>
+                <p className='pb-5'> Using an ESP32 to control a pneumatic piston, we created a recoil feedback system that is strong enough and fast enough to mimic a wide range of firearms. Additionally, computer vision scripts were developed for detecting shots in games.</p>
+                <p>The project won Best of Show, Best VR Hack, and Best Hardware Hack. The final device we created is fun to use in games and we believe that it could serve as a great training tool.</p>
+              </div>
+              {/* <div>
+                <p>put a video here</p>
+              </div> */}
+            </div>
+          </div>
+        </FullScreenModal>
 
         {/* Phone Notification Popup */}
         <Notification title="Phone Number Copied" open={phone} percent={phonePercent} handleClose={() => setPhone(false)}>
