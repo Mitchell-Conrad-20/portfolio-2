@@ -15,6 +15,8 @@ import Background from './components/Background'
 import NavArrows from './components/NavArrows'
 import RevealRepeat from './components/RevealRepeat'
 import { useInView } from 'framer-motion'
+import ReactPlayer from 'react-player/lazy'
+import Resume from './components/Resume'
 
 export default function Home() {
   // Dark Mode - Uses user preference first. User an opt. to switch at any point
@@ -40,6 +42,14 @@ export default function Home() {
 
   // Gallery Item Full Screen Modal States
   const [thunderDonkey, setThunderDonkey] = useState<boolean>(false)
+  const [OWC, setOWC] = useState<boolean>(false)
+  const [drone, setDrone] = useState<boolean>(false)
+  const [stepper, setStepper] = useState<boolean>(false)
+  const [paper, setPaper] = useState<boolean>(false)
+  const [heic, setHeic] = useState<boolean>(false)
+
+  // Resume Full Screen Modal
+  const [resume, setResume] = useState<boolean>(false)
 
   // Set Notification States
   const [phone, setPhone] = useState<boolean>(false)
@@ -140,7 +150,7 @@ export default function Home() {
 
   return (
     <div className={(dark ? "dark" : "")}>
-      <main className={"bg-white text-gray dark:bg-gray dark:text-white"}>
+      <main className={"bg-white text-gray dark:bg-gray dark:text-white overflow-x-hidden"}>
 
         <Background dark={dark} />
 
@@ -152,8 +162,8 @@ export default function Home() {
           </div>
 
           {/* Splash Content */}
-          <div ref={ splashSectionCheck }>
-            <Splash setPhone={ () => setPhone(true)} setEmail={ () => setEmail(true)} />
+          <div ref={ splashSectionCheck } >
+            <Splash setPhone={ () => setPhone(true)} setEmail={ () => setEmail(true)} setResume={ () => setResume(true) } />
           </div>
 
         </section>
@@ -176,7 +186,7 @@ export default function Home() {
         {/* Gallery Section */}
         <section ref={ gallerySection } className='flex flex-col justify-center align-middle py-10 px-10 min-h-screen'>
           <div ref={ gallerySectionCheck }>
-            <Gallery handleOpenArray={ [()=> setThunderDonkey(true)] } />
+            <Gallery handleOpenArray={ [() => setThunderDonkey(true), () => setOWC(true), () => setDrone(true), () => setStepper(true), () => setPaper(true), () => setHeic(true) ] } />
           </div>
         </section>  
 
@@ -185,7 +195,8 @@ export default function Home() {
           <h3 className='text-xl'>Reach Out!</h3>  
           <div className='flex justify-center py-5'>
             <Socials setPhone={ () => setPhone(true)} setEmail={ () => setEmail(true)} />
-            <a href="/resume" target='_blank' rel='noreferrer' className='text-md text-white font-semibold border-2 border-white hover:bg-white transition ease-in-out hover:text-gray dark:hover:text-lightGray px-2 pt-1 rounded-md ml-4'>Resume</a>
+            {/* <a href="/resume" target='_blank' rel='noreferrer' className='text-md text-white font-semibold border-2 border-white hover:bg-white transition ease-in-out hover:text-gray dark:hover:text-lightGray px-2 pt-1 rounded-md ml-4'>Resume</a> */}
+            <p onClick={ () => setResume(true) } className='cursor-pointer text-md text-white font-semibold border-2 border-white hover:bg-white transition ease-in-out hover:text-gray dark:hover:text-lightGray px-2 pt-1 rounded-md ml-4'>Resume</p>
           </div>
         </section>
 
@@ -193,6 +204,7 @@ export default function Home() {
         <NavArrows showUp={ !splashInView } showDown={ !galleryInView } handleUpClick={ () => scrollUp() } handleDownClick={ () => scrollDown() } />
 
         {/* Full Screen Modals */}
+        {/* Thunder Donkey */}
         <FullScreenModal title='' open={ thunderDonkey } handleClose={ () => setThunderDonkey(false) }>
           <div className='flex flex-col justify-center align-middle w-full h-full'>
             <div className='flex justify-center gap-10'>
@@ -202,9 +214,120 @@ export default function Home() {
                 <p className='py-5'>Two classmates and I attended to YCP Hacks, an anual Hackathon at York College of Pennsylvania, where we set out to invent a way to improve user experience in Virtual Reality.</p>
                 <p className='pb-5'> Using an ESP32 to control a pneumatic piston, we created a recoil feedback system that is strong enough and fast enough to mimic a wide range of firearms. Additionally, computer vision scripts were developed for detecting shots in games.</p>
                 <p>The project won Best of Show, Best VR Hack, and Best Hardware Hack. The final device we created is fun to use in games and we believe that it could serve as a great training tool.</p>
+                <br />
+                <div className='hidden md:block'>
+                  <ReactPlayer url='https://www.youtube.com/watch?v=sO-APzdsIDQ' controls width={620} height={349} />
+                </div>
+                <div className='block md:hidden'>
+                  <ReactPlayer url='https://www.youtube.com/watch?v=sO-APzdsIDQ' controls width={300} height={169} />
+                </div>
+                <br />
+                <a className='text-md text-gray dark:text-white font-semibold border-2 border-gray dark:border-white hover:bg-gray dark:hover:bg-white hover:text-white dark:hover:text-gray transition ease-in-out px-2 py-2 rounded-md'
+                  href='https://github.com/Mitchell-Conrad-20/ThunderDonkey' 
+                  target='_blank' 
+                  rel='noreferrer'>GitHub</a>
               </div>
             </div>
           </div>
+        </FullScreenModal>
+        
+        {/* OWC */}
+        <FullScreenModal title='' open={ OWC } handleClose={ () => setOWC(false) }>
+          <div className='flex flex-col justify-center align-middle w-full h-full'>
+            <div className='flex justify-center gap-10'>
+              <div className='md:w-3/4 lg:w-2/3'>
+                <h3 className='text-xl font-semibold'>Optical Wireless Communications</h3>
+                <p className='text-sm font-semibold'>May - Aug 2023</p>
+                <p className='py-5'>Led the design and implementation of software and hardware improvements to a directional infrared-based OWC system, enabling robots to locate other mobile nodes and facilitate reliable data transmission autonomously.</p>
+                <p className='pb-5'>Developed a Python-based multithreaded pipeline that uses OpenCV to merge many video streams into a panoramic feed, sending the resulting stream to a custom object detection model for real-time object recognition, and achieving exceptional frame rates within an embedded environment</p>
+                <p>Lorem ipsum</p>
+                <br />
+                <a className='text-md text-gray dark:text-white font-semibold border-2 border-gray dark:border-white hover:bg-gray dark:hover:bg-white hover:text-white dark:hover:text-gray transition ease-in-out px-2 py-2 rounded-md'
+                  href='https://github.com/bhageneder/OpticalCapstoneComputerVision2023' 
+                  target='_blank' 
+                  rel='noreferrer'>GitHub</a>
+              </div>
+            </div>
+          </div>
+        </FullScreenModal>
+
+        {/* Drone */}
+        <FullScreenModal title='' open={ drone } handleClose={ () => setDrone(false) }>
+          <div className='flex flex-col justify-center align-middle w-full h-full'>
+            <div className='flex justify-center gap-10'>
+              <div className='md:w-3/4 lg:w-2/3'>
+                <h3 className='text-xl font-semibold'>Custom Drone</h3>
+                <p className='text-sm font-semibold'>November 2022</p>
+                {/* <p className='py-5'></p>
+                <p className='pb-5'></p>
+                <p></p> */}
+              </div>
+            </div>
+          </div>
+        </FullScreenModal>
+        
+        {/* Stepper Motor MIDI Synth */}
+        <FullScreenModal title='' open={ stepper } handleClose={ () => setStepper(false) }>
+          <div className='flex flex-col justify-center align-middle w-full h-full'>
+            <div className='flex justify-center gap-10'>
+              <div className='md:w-3/4 lg:w-2/3'>
+                <h3 className='text-xl font-semibold'>Stepper Motor MIDI Synth</h3>
+                <p className='text-sm font-semibold'>November 2021</p>
+                {/* <p className='py-5'></p>
+                <p className='pb-5'></p>
+                <p></p> */}
+              </div>
+            </div>
+          </div>
+        </FullScreenModal>
+
+        {/* PaperTrader */}
+        <FullScreenModal title='' open={ paper } handleClose={ () => setPaper(false) }>
+          <div className='flex flex-col justify-center align-middle w-full h-full'>
+            <div className='flex justify-center gap-10'>
+              <div className='md:w-3/4 lg:w-2/3'>
+                <h3 className='text-xl font-semibold'>PaperTrader</h3>
+                <p className='text-sm font-semibold'>Jan - May 2022</p>
+                {/* <p className='py-5'></p>
+                <p className='pb-5'></p>
+                <p></p> */}
+              </div>
+            </div>
+          </div>
+        </FullScreenModal>
+
+        {/* HEIC Conversion Tool */}
+        <FullScreenModal title='' open={ heic } handleClose={ () => setHeic(false) }>
+          <div className='flex flex-col justify-center align-middle w-full h-full'>
+            <div className='flex justify-center gap-10'>
+              <div className='md:w-3/4 lg:w-2/3'>
+                <h3 className='text-xl font-semibold'>HEIC Conversion Tool</h3>
+                <p className='text-sm font-semibold'>December 2023</p>
+                {/* <p className='py-5'></p>
+                <p className='pb-5'></p>
+                <p></p> */}
+              </div>
+            </div>
+          </div>
+        </FullScreenModal>
+
+        {/* Resume Modal */}
+        <FullScreenModal title='' open={ resume } handleClose={ () => setResume(false) }>
+          <div className='flex flex-col align-middle w-full h-full'>
+            <div className='flex gap-x-10 justify-evenly pb-10'>
+              <div>
+                <h3 className='text-xl font-semibold'>Resume</h3>
+                <p className='text-sm font-semibold py-2'>Updated Jan 2024</p>
+              </div>
+              <p className='pt-4'>
+                <a className='text-md text-gray dark:text-white font-semibold border-2 border-gray dark:border-white hover:bg-gray dark:hover:bg-white hover:text-white dark:hover:text-gray transition ease-in-out px-2 py-2 rounded-md'
+                  href='/resume/ResumeMitchellConradOctober2023.pdf'
+                  target='_blank'
+                  rel='noreferrer '>Print</a>
+              </p>
+            </div>
+            <Resume />
+          </div>       
         </FullScreenModal>
 
         {/* Phone Notification Popup */}

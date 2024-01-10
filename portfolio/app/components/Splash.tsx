@@ -6,7 +6,7 @@ import Reveal from './Reveal';
 import headshotSquareClear from '../../public/images/headshot-square-clear.png'
 import { VscChromeMinimize , VscChromeMaximize, VscChromeClose } from "react-icons/vsc";
 
-const Splash = (props: {setPhone: () => void, setEmail: () => void}) => {
+const Splash = (props: {setPhone: () => void, setEmail: () => void, setResume: () => void}) => {
   return (
     <>
         <div className='px-10 text-center lg:flex lg:justify-center lg:text-left lg:h-full'>
@@ -65,7 +65,7 @@ const Splash = (props: {setPhone: () => void, setEmail: () => void}) => {
                 <Reveal rightToLeft delay={1}>
                     <div className='py-5 flex justify-center lg:justify-start'>
                         <Socials setPhone={ () => props.setPhone()} setEmail={ () => props.setEmail()} />
-                        <a href="/resume" target='_blank' rel='noreferrer' className='text-md text-gray dark:text-white font-semibold border-2 border-gray dark:border-white hover:bg-gray dark:hover:bg-white hover:text-white dark:hover:text-gray transition ease-in-out px-2 pt-1 rounded-md ml-4'>Resume</a>
+                        <p onClick={ () => props.setResume() } className='cursor-pointer text-md text-gray dark:text-white font-semibold border-2 border-gray dark:border-white hover:bg-gray dark:hover:bg-white transition ease-in-out hover:text-white dark:hover:text-gray px-2 pt-1 rounded-md ml-4'>Resume</p>
                     </div>
                 </Reveal>
 

@@ -1,11 +1,11 @@
 'use client'
 import { useState, useEffect, useRef } from 'react'
 import { Document, Page } from 'react-pdf';
-
 import { pdfjs } from 'react-pdf';
+
 pdfjs.GlobalWorkerOptions.workerSrc = `//unpkg.com/pdfjs-dist@${pdfjs.version}/build/pdf.worker.min.js`;
 
-export default function testPage(){
+const Resume = () => {
     const [numPages, setNumPages] = useState<number>();
     const [pageNumber, setPageNumber] = useState<number>(1);
     const refContainer = useRef<HTMLDivElement>(null)
@@ -37,21 +37,16 @@ export default function testPage(){
         // Add onWindowResize to the resize event
         window.addEventListener("resize", onWindowResize, false);
     })
-
-    return(
-        <main className='overflow-hidden'>
-            {/* <iframe className='w-screen h-screen' src='/resume/ResumeMitchellConradOctober2023.pdf'/> */}
-            <div className='w-screen min-h-screen'>
-                <a className='text-md text-gray dark:text-white font-semibold border-2 border-gray dark:border-white hover:bg-gray dark:hover:bg-white hover:text-white dark:hover:text-gray transition ease-in-out px-2 py-2 rounded-md'
-                  href='/resume/ResumeMitchellConradOctober2023.pdf' 
-                  target='_blank' 
-                  rel='noreferrer'>Print</a>
-                <div ref={ refContainer } className='w-auto md:w-2/3 xl:w-1/2'>
-                    <Document file='/resume/ResumeMitchellConradOctober2023.pdf' onLoadSuccess={onDocumentLoadSuccess}>
-                        <Page pageNumber={pageNumber} renderAnnotationLayer={ false } renderTextLayer={ false } width={ width } />
-                    </Document>
-                </div>
-            </div>
-        </main>
-    )
+    
+  return (
+    <div className='w-full h-full flex flex-col align-middle'>
+        <div ref={ refContainer } className='w-full md:w-2/3 xl:w-1/2 pb-10 mx-auto'>
+            <Document className={'shadow-2xl overflow-hidden rounded-lg dark:border-none'} file='/resume/ResumeMitchellConradOctober2023.pdf' onLoadSuccess={onDocumentLoadSuccess}>
+                <Page pageNumber={pageNumber} renderAnnotationLayer={ false } renderTextLayer={ false } width={ width } />
+            </Document>
+        </div>
+    </div>
+  )
 }
+
+export default Resume
