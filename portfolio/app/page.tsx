@@ -238,9 +238,9 @@ export default function Home() {
               <div className='md:w-3/4 lg:w-2/3'>
                 <h3 className='text-xl font-semibold'>Optical Wireless Communications</h3>
                 <p className='text-sm font-semibold'>May - Aug 2023</p>
-                <p className='py-5'>Led the design and implementation of software and hardware improvements to a directional infrared-based OWC system, enabling robots to locate other mobile nodes and facilitate reliable data transmission autonomously.</p>
-                <p className='pb-5'>Developed a Python-based multithreaded pipeline that uses OpenCV to merge many video streams into a panoramic feed, sending the resulting stream to a custom object detection model for real-time object recognition, and achieving exceptional frame rates within an embedded environment</p>
-                <p>Lorem ipsum</p>
+                <p className='py-5'>The Optical Wireless Communications project is a capstone project at York College of Pennsylvania. The project has been in developement through three graduating classes.The goal of the project is to develop a reliable wireless communications system using directional infrared transceivers. The previous team developed discovery and maintenance protocols which establish and maintain TCP sockets between robots.</p>
+                <p className='pb-5'>My team and I sought to improve the system by using cameras and object detection to locate other robots. We developed a multithreaded pipeline that uses OpenCV to merge many video streams into a panoramic feed. Then, the resulting stream is sent to a custom object detection model for real-time object recognition. When a robot is identified, a TCP socket can be created and data can be transmitted between the robots.</p>
+                <p>My team and I will continue to work on the project throughout the Spring semester in 2024 where we hope to continue improving the system.</p>
                 <br />
                 <a className='text-md text-gray dark:text-white font-semibold border-2 border-gray dark:border-white hover:bg-gray dark:hover:bg-white hover:text-white dark:hover:text-gray transition ease-in-out px-2 py-2 rounded-md'
                   href='https://github.com/bhageneder/OpticalCapstoneComputerVision2023' 
