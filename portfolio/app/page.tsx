@@ -203,9 +203,6 @@ export default function Home() {
                 <p className='pb-5'> Using an ESP32 to control a pneumatic piston, we created a recoil feedback system that is strong enough and fast enough to mimic a wide range of firearms. Additionally, computer vision scripts were developed for detecting shots in games.</p>
                 <p>The project won Best of Show, Best VR Hack, and Best Hardware Hack. The final device we created is fun to use in games and we believe that it could serve as a great training tool.</p>
               </div>
-              {/* <div>
-                <p>put a video here</p>
-              </div> */}
             </div>
           </div>
         </FullScreenModal>

@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import { motion, useInView, useAnimationControls } from 'framer-motion'
+import { motion, useAnimationControls } from 'framer-motion'
 import { AiOutlineClose } from 'react-icons/ai'
 
 const Notification = (props: { title: string, open: boolean, handleClose: () => void, percent: number, children: React.ReactNode}) => {
@@ -39,7 +39,7 @@ const Notification = (props: { title: string, open: boolean, handleClose: () => 
     return(
         <>
             { openOrAnimating &&
-            <motion.div id='wrapper'
+            <motion.div
                 className={'fixed top-0 left-0 right-0 flex justify-center'}
                 variants={{
                     hidden: { opacity: 0, y: -75 },
