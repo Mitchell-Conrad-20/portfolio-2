@@ -41,9 +41,6 @@ const Splash = (props: {setPhone: () => void, setEmail: () => void, setResume: (
                             </div>
                         </div>
                         <div className="px-5 py-3 leading-loose md:h-32 lg:w-144 lg:h-32">
-                            {/* <p>{">"} Swift learner and highly motivated engineer.</p>
-                            <p>{">"} Seeking a full-time role in embedded systems, software, or hardware.</p>
-                            <p>{">"} Graduating August 2024.</p> */}
                             <Typewriter
                                 onInit={(typewriter) => {
                                 typewriter.typeString('> Swift learner and highly motivated engineer.<br />> ')

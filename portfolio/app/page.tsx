@@ -17,8 +17,13 @@ import RevealRepeat from './components/RevealRepeat'
 import { useInView } from 'framer-motion'
 import ReactPlayer from 'react-player/lazy'
 import Resume from './components/Resume'
+import Loading from './components/Loading'
 
 export default function Home() {
+  // Loading State - Finishes Loading When ThreeJS completes first render
+  const [loading, setLoading] = useState<boolean>(true) // Loading for 3 JS
+  const [loadingDark, setLoadingDark] = useState<boolean>(true) // Loading for Dark Theme
+
   // Dark Mode - Uses user preference first. User an opt. to switch at any point
   const [dark, setDark] = useState<boolean>(false)
 
@@ -67,6 +72,7 @@ export default function Home() {
 
       // Update the state
       setDark(darkMode)
+      setLoadingDark(false)
     }
   }, [])
 
@@ -149,10 +155,14 @@ export default function Home() {
     }
 
   return (
-    <div className={(dark ? "dark" : "")}>
+    <div className={dark ? "dark" : ""}>
       <main className={"bg-white text-gray dark:bg-gray dark:text-white overflow-x-hidden"}>
 
-        <Background dark={dark} />
+      { loading &&
+        <Loading />
+      }
+
+        <Background dark={dark} loadingDark={loadingDark} doneLoading={ () => setLoading(false) } />
 
         {/* Splash Section */}
         <section ref={ splashSection } className="min-h-screen lg:flex lg:flex-col lg:justify-center absolute top-0 left-0 right-0">

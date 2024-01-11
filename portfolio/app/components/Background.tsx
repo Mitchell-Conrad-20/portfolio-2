@@ -1,8 +1,8 @@
 import React, { useEffect, useRef } from 'react'
 import * as THREE from 'three'
 
-const Background = (props: { dark: boolean }) => {
-    const refContainer = useRef<HTMLDivElement>(null);
+const Background = (props: { dark: boolean, doneLoading: () => void, loadingDark: boolean }) => {
+    const refContainer = useRef<HTMLDivElement>(null)
     useEffect((): () => void => {
         // Colors
         const white = new THREE.Color(0xFFFFFF);
@@ -163,12 +163,20 @@ const Background = (props: { dark: boolean }) => {
         // Call animate function
         animate()
 
+        // After everything is complete, check if the dark theme loaded from storage
+        // If the storage has responded (regardless of which theme)
+        // Then we will say we are done loading
+        if(props.loadingDark){
+            // Set Done Loading to True
+            props.doneLoading()
+        }
+
         // Remove old scene
         return () => {
             oldRef.current?.removeChild(renderer.domElement)
         }
 
-      }, [props.dark]);
+      }, [props.dark, props.loadingDark]);
     
     return (
         <>
