@@ -18,6 +18,8 @@ import { useInView } from 'framer-motion'
 import ReactPlayer from 'react-player/lazy'
 import Resume from './components/Resume'
 import Loading from './components/Loading'
+import Image from 'next/image'
+import paperTrader from '../public/images/paperTrader-2.png'
 
 export default function Home() {
   // Loading State - Finishes Loading When ThreeJS completes first render
@@ -226,10 +228,10 @@ export default function Home() {
                 <p>The project won Best of Show, Best VR Hack, and Best Hardware Hack. The final device we created is fun to use in games and we believe that it could serve as a great training tool.</p>
                 <br />
                 <div className='hidden md:block'>
-                  <ReactPlayer url='https://www.youtube.com/watch?v=sO-APzdsIDQ' controls width={620} height={349} />
+                  <ReactPlayer url={[{src: './images/FinalVideo.mp4', type: 'video/mp4'}]} controls width={620} height={349} />
                 </div>
                 <div className='block md:hidden'>
-                  <ReactPlayer url='https://www.youtube.com/watch?v=sO-APzdsIDQ' controls width={300} height={169} />
+                  <ReactPlayer url={[{src: './images/FinalVideo.mp4', type: 'video/mp4'}]} controls width={300} height={169} />
                 </div>
                 <br />
                 <a className='text-md text-gray dark:text-white font-semibold border-2 border-gray dark:border-white hover:bg-gray dark:hover:bg-white hover:text-white dark:hover:text-gray transition ease-in-out px-2 py-2 rounded-md'
@@ -266,11 +268,11 @@ export default function Home() {
           <div className='flex flex-col justify-center align-middle w-full h-full'>
             <div className='flex justify-center gap-10'>
               <div className='md:w-3/4 lg:w-2/3'>
-                <h3 className='text-xl font-semibold'>Custom Drone</h3>
+                <h3 className='text-xl font-semibold'>Quadcopter</h3>
                 <p className='text-sm font-semibold'>November 2022</p>
-                {/* <p className='py-5'></p>
-                <p className='pb-5'></p>
-                <p></p> */}
+                <p className='py-5'>With three of my classmates, I attended YCP Hacks at York College of Pennsylvania where we designed and built a drone in 36 hours.</p>
+                <p className='pb-5'>The used an Arduino to act as the flight controller. Additionally, the design used a RF receiver, an accelerometer, and a gyroscope which communicated with the Arduino using serial communications. We also developed a protoboard to control the motor speeds using PWM signals from the Arduino.</p>
+                <p>Although we did not complete the PID portion of the flight controller code due to the time constraints, the project was still a huge success. We demonstrated portions of the flight controller working and won second place in the Hardware Hack category.</p>
               </div>
             </div>
           </div>
@@ -283,9 +285,23 @@ export default function Home() {
               <div className='md:w-3/4 lg:w-2/3'>
                 <h3 className='text-xl font-semibold'>Stepper Motor MIDI Synth</h3>
                 <p className='text-sm font-semibold'>November 2021</p>
-                {/* <p className='py-5'></p>
-                <p className='pb-5'></p>
-                <p></p> */}
+                <p className='py-5'>Along with three of my classmates, I attended YCP Hacks, where we developed a MIDI Synthesizer. This synth differs from others by using the vibrations of stepper motors to produce the music instead of a speaker. </p>
+                <p className='pb-5'>We began by developing Arduino code which allowed us to "tune" the motors. After we created a map of motor speed to pitch, we developed an Arduino program that processed a live MIDI signal. The signal could be up to four channels -- with each motor handling one channel. Additionally, developed code which outputs a visual representation of the music on an LED matrix.</p>
+                <p>The project was a huge success. The music that the synthesizer produced was interesting and enjoyable to listen to. My team and I won first place in the Hardware Hack category.</p>
+                <br />
+                <div className='hidden md:block'>
+                  <ReactPlayer url={[{src: './images/midiVideo.mp4', type: 'video/mp4'}]} controls width={620} height={349} />
+                </div>
+                <div className='block md:hidden'>
+                  <ReactPlayer url={[{src: './images/midiVideo.mp4', type: 'video/mp4'}]} controls width={300} height={169} />
+                </div>
+                <br />
+                <a className='text-md text-gray dark:text-white font-semibold border-2 border-gray dark:border-white hover:bg-gray dark:hover:bg-white hover:text-white dark:hover:text-gray transition ease-in-out px-2 py-2 rounded-md'
+                  href='https://github.com/stoneoxmike/YCP-Hacks-2021' 
+                  target='_blank' 
+                  rel='noreferrer'>GitHub</a>
+                <br />
+                <br />
               </div>
             </div>
           </div>
@@ -298,9 +314,15 @@ export default function Home() {
               <div className='md:w-3/4 lg:w-2/3'>
                 <h3 className='text-xl font-semibold'>PaperTrader</h3>
                 <p className='text-sm font-semibold'>Jan - May 2022</p>
-                {/* <p className='py-5'></p>
-                <p className='pb-5'></p>
-                <p></p> */}
+                <p className='py-5'>PaperTrader is a web app with a target audience for people who are interested in learning about the stock market. Users create an account and trade stocks based on real market data without risking any money. The project was developed on a team of four in the Software Engineering and Design course at York College of Pennsylvania.</p>
+                <div className='rounded-lg shadow-xl'>
+                  <Image src={paperTrader} alt='PaperTrader Stock Trading Screen' className="rounded-lg object-cover" />
+                </div>
+                <br />
+                <a className='text-md text-gray dark:text-white font-semibold border-2 border-gray dark:border-white hover:bg-gray dark:hover:bg-white hover:text-white dark:hover:text-gray transition ease-in-out px-2 py-2 rounded-md'
+                  href='https://github.com/Mitchell-Conrad-20/paper-trader' 
+                  target='_blank' 
+                  rel='noreferrer'>GitHub</a>
               </div>
             </div>
           </div>
@@ -313,9 +335,14 @@ export default function Home() {
               <div className='md:w-3/4 lg:w-2/3'>
                 <h3 className='text-xl font-semibold'>HEIC Conversion Tool</h3>
                 <p className='text-sm font-semibold'>December 2023</p>
-                {/* <p className='py-5'></p>
-                <p className='pb-5'></p>
-                <p></p> */}
+                <p className='py-5'>Often, I would transfer photos from my iPhone to my windows desktop using the OneDive app. This brought up a large issue: the HEIC file format is not very well supported on windows.</p>
+                <p className='pb-5'>When I tried to find a good tool to convert many photos at once, the free versions were very limited and would not allow the conversion of more than five photos at once. This made it a very time consuming process to convert lots of images.</p>
+                <p>To solve this problem, I created a free and open-source application which converts an entire folder of HEIC photos to PNG or JPG formats. The application is written in Python and uses a Tkinter based GUI. This allows for easy modification for other developers so they can tweak the application to suit their own needs. The tool is also available as a Windows executable for non-developers, or for people who are satisfied with the functionality.</p>
+                <br />
+                <a className='text-md text-gray dark:text-white font-semibold border-2 border-gray dark:border-white hover:bg-gray dark:hover:bg-white hover:text-white dark:hover:text-gray transition ease-in-out px-2 py-2 rounded-md'
+                  href='https://github.com/Mitchell-Conrad-20/HEIC-Conversion-Tool' 
+                  target='_blank' 
+                  rel='noreferrer'>GitHub</a>
               </div>
             </div>
           </div>

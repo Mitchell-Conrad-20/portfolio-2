@@ -34,10 +34,10 @@ const Gallery = (props: { handleOpenArray:Array<() => void>
           </Card>
         </Reveal>
         <Reveal overflowHidden={false} delay={0.500}>
-          <Card onClick={ () => props.handleOpenArray[2]() } src={drone} alt='Drone' title='Custom Drone'>
+          <Card onClick={ () => props.handleOpenArray[2]() } src={drone} alt='Drone' title='Quadcopter'>
             <span className='text-analagous1 border-analagous1 text-xs border-2 rounded-md p-0.5 mr-0.5'>Arduino</span>
             <span className='text-success border-success text-xs border-2 rounded-md p-0.5 mr-0.5'>Electrical Design</span>
-            <p className='pt-0.5'>Created a drone using an Arduino based flight controller. Developed a protoboard to control motors with PWM.</p>
+            <p className='pt-0.5'>Created a quadcopter using an Arduino as the flight controller. Developed a protoboard to control motors with PWM.</p>
           </Card>
         </Reveal>
         <Reveal overflowHidden={false} delay={0.500}>
