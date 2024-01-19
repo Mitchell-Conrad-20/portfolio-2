@@ -20,6 +20,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
+        {/* Icons */}
         <link rel="icon" href="/favicon.ico" sizes="any" />
         <link
           rel="icon"
@@ -33,6 +34,16 @@ export default function RootLayout({
           type="image/<generated>"
           sizes="<generated>"
         />
+        {/* OpenGraph */}
+        <meta property="og:image" content="<generated>" />
+        <meta property="og:image:type" content="<generated>" />
+        <meta property="og:image:width" content="<generated>" />
+        <meta property="og:image:height" content="<generated>" />
+        {/* Twitter Image */}
+        <meta name="twitter:image" content="<generated>" />
+        <meta name="twitter:image:type" content="<generated>" />
+        <meta name="twitter:image:width" content="<generated>" />
+        <meta name="twitter:image:height" content="<generated>" />
       </head>
       <body className={raleway.className}>{children}</body>
     </html>
