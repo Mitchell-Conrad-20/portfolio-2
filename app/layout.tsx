@@ -8,6 +8,7 @@ const overpass = Overpass({ subsets: ['latin']})
 const raleway = Raleway({ subsets: ['latin']})
 
 export const metadata: Metadata = {
+  metadataBase: new URL('https://mconrad.tech'),
   title: 'Mitchell Conrad',
   description: 'Computer engineer with skills in embedded systems, computer vision, web development, and control systems.',
 }
