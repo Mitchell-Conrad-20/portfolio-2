@@ -289,7 +289,7 @@ export default function Home() {
                 <h3 className='text-xl font-semibold'>Stepper Motor MIDI Synth</h3>
                 <p className='text-sm font-semibold'>November 2021</p>
                 <p className='py-5'>Along with three of my classmates, I attended YCP Hacks, where we developed a MIDI Synthesizer. This synth differs from others by using the vibrations of stepper motors to produce the music instead of a speaker. </p>
-                <p className='pb-5'>We began by developing Arduino code which allowed us to "tune" the motors. After we created a map of motor speed to pitch, we developed an Arduino program that processed a live MIDI signal. The signal could be up to four channels -- with each motor handling one channel. Additionally, developed code which outputs a visual representation of the music on an LED matrix.</p>
+                <p className='pb-5'>We began by developing Arduino code which allowed us to tune the motors. After we created a map of motor speed to pitch, we developed an Arduino program that processed a live MIDI signal. The signal could be up to four channels -- with each motor handling one channel. Additionally, developed code which outputs a visual representation of the music on an LED matrix.</p>
                 <p>The project was a huge success. The music that the synthesizer produced was interesting and enjoyable to listen to. My team and I won first place in the Hardware Hack category.</p>
                 <br />
                 <div className='hidden md:block'>
