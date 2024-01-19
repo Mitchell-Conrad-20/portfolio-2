@@ -7,14 +7,9 @@ const inter = Inter({ subsets: ['latin'] })
 const overpass = Overpass({ subsets: ['latin']})
 const raleway = Raleway({ subsets: ['latin']})
 
-const openGraphImage = { images: ['./opengraph-image.png'] }
-
 export const metadata: Metadata = {
   title: 'Mitchell Conrad',
   description: 'Computer engineer with skills in embedded systems, computer vision, web development, and control systems.',
-  openGraph:{
-    ...openGraphImage,
-  }
 }
 
 export default function RootLayout({
