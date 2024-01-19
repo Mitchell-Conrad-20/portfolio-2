@@ -45,7 +45,7 @@ const Splash = (props: {setPhone: () => void, setEmail: () => void, setResume: (
                                 onInit={(typewriter) => {
                                 typewriter.typeString('> Swift learner and highly motivated engineer.<br />> ')
                                     .pauseFor(500)
-                                    .typeString('Seeking a full-time role in embedded systems, software, or hardware.<br />> ')
+                                    .typeString('Interested in embedded systems, software, and hardware.<br />> ')
                                     .pauseFor(500)
                                     .typeString('Graduating August 2024.')
                                     .callFunction(() => {

@@ -20,6 +20,8 @@ import Resume from './components/Resume'
 import Loading from './components/Loading'
 import Image from 'next/image'
 import paperTrader from '../public/images/paperTrader-2.png'
+import thermometerBreadboard from '../public/images/thermometer_breadboard.jpg'
+import thermometerCircuit from '../public/images/final-thermometer.jpg'
 
 export default function Home() {
   // Loading State - Finishes Loading When ThreeJS completes first render
@@ -54,6 +56,7 @@ export default function Home() {
   const [stepper, setStepper] = useState<boolean>(false)
   const [paper, setPaper] = useState<boolean>(false)
   const [heic, setHeic] = useState<boolean>(false)
+  const [thermometer, setThermometer] = useState<boolean>(false)
 
   // Resume Full Screen Modal
   const [resume, setResume] = useState<boolean>(false)
@@ -198,7 +201,7 @@ export default function Home() {
         {/* Gallery Section */}
         <section ref={ gallerySection } className='flex flex-col justify-center align-middle py-10 px-10 min-h-screen'>
           <div ref={ gallerySectionCheck }>
-            <Gallery handleOpenArray={ [() => setThunderDonkey(true), () => setOWC(true), () => setDrone(true), () => setStepper(true), () => setPaper(true), () => setHeic(true) ] } />
+            <Gallery handleOpenArray={ [() => setThunderDonkey(true), () => setOWC(true), () => setDrone(true), () => setStepper(true), () => setPaper(true), () => setHeic(true), () => setThermometer(true) ] } />
           </div>
         </section>  
 
@@ -335,7 +338,7 @@ export default function Home() {
               <div className='md:w-3/4 lg:w-2/3'>
                 <h3 className='text-xl font-semibold'>HEIC Conversion Tool</h3>
                 <p className='text-sm font-semibold'>December 2023</p>
-                <p className='py-5'>Often, I would transfer photos from my iPhone to my windows desktop using the OneDive app. This brought up a large issue: the HEIC file format is not very well supported on windows.</p>
+                <p className='py-5'>Often, I would transfer photos from my iPhone to my Windows desktop using the OneDive app. This brought up a large issue: the HEIC file format is not very well supported on windows.</p>
                 <p className='pb-5'>When I tried to find a good tool to convert many photos at once, the free versions were very limited and would not allow the conversion of more than five photos at once. This made it a very time consuming process to convert lots of images.</p>
                 <p>To solve this problem, I created a free and open-source application which converts an entire folder of HEIC photos to PNG or JPG formats. The application is written in Python and uses a Tkinter based GUI. This allows for easy modification for other developers so they can tweak the application to suit their own needs. The tool is also available as a Windows executable for non-developers, or for people who are satisfied with the functionality.</p>
                 <br />
@@ -343,6 +346,34 @@ export default function Home() {
                   href='https://github.com/Mitchell-Conrad-20/HEIC-Conversion-Tool' 
                   target='_blank' 
                   rel='noreferrer'>GitHub</a>
+              </div>
+            </div>
+          </div>
+        </FullScreenModal>
+
+          {/* Thermometer */}
+          <FullScreenModal title='' open={ thermometer } handleClose={ () => setThermometer(false) }>
+          <div className='flex flex-col justify-center align-middle w-full lg:h-full'>
+            <div className='flex justify-center gap-10'>
+              <div className='md:w-3/4 lg:w-2/3'>
+                <h3 className='text-xl font-semibold'>Thermometer</h3>
+                <p className='text-sm font-semibold'>Nov 2022</p>
+                <p className='py-5'>The goal of the project was to develop a thermometer which uses a diode as a transducer. The thermometer should be capable of measuring across a range of 0-100 degrees celcius.</p>
+                <p className='pb-5'>My partner and I used operational amplifiers to create a constant current source which feeds the diode. The resultant voltage across the diode has a linear relationship with the temperature of the diode. Again, using operational amplifiers, the voltage across the diode is shifted and amplfied such that the final output is the temperature in celcius divided by ten.</p>
+                <p className='md:mb-5'>The output of the termometer is across a 0-10V range which could easily be used in many analog systems. The thermometer we designed was extremely successful and exceeded the requirements.</p>
+                <div className='md:flex md:gap-x-10'>
+                  <div className='rounded-lg w-64 my-10 md:my-0 md:w-auto'>
+                    <Image src={thermometerBreadboard} alt='Breadboarded Thermometer' className="rounded-lg object-cover shadow-xl" />
+                  </div>
+                  <div className='rounded-lg w-64 md:w-auto'>
+                    <Image src={thermometerCircuit} alt='Thermometer Circuit Diagram' className="rounded-lg object-cover shadow-xl" />
+                  </div>
+                </div>
+                <div className='block md:hidden'>
+                  <br />
+                  <br />
+                  <br />
+                </div>
               </div>
             </div>
           </div>

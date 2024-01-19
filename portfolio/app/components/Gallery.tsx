@@ -5,8 +5,9 @@ import rifle from '../../public/images/firing.gif'
 import robot from '../../public/images/robot.png'
 import drone from '../../public/images/droneCrop.jpg'
 import synth from '../../public/images/midiFront.jpg'
-import paperTrader from '../../public/images/paperTrader.png'
+import paperTrader from '../../public/images/paperTrader-2.png'
 import heicTool from '../../public/images/HEIC-Conversion-Tool-Graphic.png'
+import thermometer from '../../public/images/thermometer_breadboard.jpg'
 
 const Gallery = (props: { handleOpenArray:Array<() => void>
  }) => {
@@ -58,7 +59,13 @@ const Gallery = (props: { handleOpenArray:Array<() => void>
             <span className='text-complementary border-complementary text-xs border-2 rounded-md p-0.5 mr-0.5'>Python</span>
             <p className='pt-0.5'>Allows users to convert entire folders of HEIC (iPhone) photos to JPG or PNG formats.</p>
           </Card>
-        </Reveal>         
+        </Reveal>    
+        <Reveal overflowHidden={false} delay={0.750}>
+          <Card onClick={ () => props.handleOpenArray[6]() } src={thermometer} alt='Breadboarded Thermometer' title='Thermometer'>
+            <span className='text-success border-success text-xs border-2 rounded-md p-0.5 mr-0.5'>Electrical Design</span>
+            <p className='pt-0.5'>Designed and built a thermometer using operational amplifiers and a diode as the transducer.</p>
+          </Card>
+        </Reveal>     
       </div>
     </>
   )
