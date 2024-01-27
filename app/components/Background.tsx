@@ -57,11 +57,13 @@ const Background = (props: { dark: boolean, doneLoading: () => void, loadingDark
         // Particle Geometry
         particlesGeometry.setAttribute('position', new THREE.BufferAttribute(positions, 3))
 
-        // Particles Material
+        // Create Particles Material
         const particlesMaterial = new THREE.PointsMaterial({
-            size: 0.005,
             color: foregroundColor
         })
+
+        // Set Particle Size Based Upon Color Scheme
+        props.dark ? particlesMaterial.setValues({size: 0.005}) : particlesMaterial.setValues({size: 0.01})
 
         // Particle Mesh
         const particlesMesh = new THREE.Points(particlesGeometry, particlesMaterial)
@@ -122,7 +124,7 @@ const Background = (props: { dark: boolean, doneLoading: () => void, loadingDark
             // Request next animation frame
             requestAnimationFrame(animate);
 
-            // Get elapsed time
+            // Get elapsed time (not used for current implementation)
             const elapsedTime = clock.getElapsedTime()
 
             // Animate particles
@@ -133,14 +135,14 @@ const Background = (props: { dark: boolean, doneLoading: () => void, loadingDark
                     }
                     else{
                         xSign = Math.sign(mouseX - prevX)
-                        particlesMesh.rotation.y += (mouseX * 0.00001 * xSign)
+                        particlesMesh.rotation.y += (0.003 * xSign)
                     }
                     if (prevY == mouseY){
                         particlesMesh.rotation.x += (0.001 * ySign)
                     }
                     else{
                         ySign = Math.sign(mouseY - prevY)
-                        particlesMesh.rotation.x += (mouseY * 0.00001 * ySign)
+                        particlesMesh.rotation.x += (0.003 * ySign)
                     }
                 }
                 else{

@@ -5,6 +5,7 @@ import Typewriter from 'typewriter-effect';
 import Reveal from './Reveal';
 import headshotSquareClear from '../../public/images/headshot-square-clear.png'
 import { VscChromeMinimize , VscChromeMaximize, VscChromeClose } from "react-icons/vsc";
+import { randInt } from 'three/src/math/MathUtils.js';
 
 const Splash = (props: {setPhone: () => void, setEmail: () => void, setResume: () => void}) => {
   return (
@@ -43,6 +44,7 @@ const Splash = (props: {setPhone: () => void, setEmail: () => void, setResume: (
                         <div className="px-5 py-3 leading-loose md:h-32 lg:w-144 lg:h-32">
                             <Typewriter
                                 onInit={(typewriter) => {
+                                typewriter.changeDelay(Math.floor(Math.random()*50) + (Math.floor(Math.random()*30)))
                                 typewriter.typeString('> Swift learner and highly motivated engineer.<br />> ')
                                     .pauseFor(500)
                                     .typeString('Interested in embedded systems, software, and hardware.<br />> ')

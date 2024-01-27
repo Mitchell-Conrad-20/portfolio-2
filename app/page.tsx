@@ -400,14 +400,14 @@ export default function Home() {
 
         {/* Phone Notification Popup */}
         <Notification title="Phone Number Copied" open={phone} percent={phonePercent} handleClose={() => setPhone(false)}>
-          <a href='tel:484-502-9014'>
+          <a href='tel:484-502-9014' target='_blank' rel='noreferrer'>
             <p className='text-sm'>Open in App</p>
           </a>
         </Notification>
 
         {/* Email Notification Popup */} 
         <Notification title="Email Copied" open={email} percent={emailPercent} handleClose={() => setEmail(false)}>
-          <a href='mailto:mconrad4@ycp.edu'>
+          <a href='mailto:mconrad4@ycp.edu' target='_blank' rel='noreferrer'>
             <p className='text-sm'>Open in App</p>
           </a>
         </Notification>

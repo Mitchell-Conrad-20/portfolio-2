@@ -58,7 +58,7 @@ const FullScreenModal = (props: { title: string, open: boolean, handleClose: () 
             <div className='flex flex-col w-screen h-screen bg-white dark:bg-lightGray px-10 pt-5 overflow-y-auto'>
                 <div className='flex justify-between'>
                     <h1 className='text-xl'>{ props.title }</h1>
-                    <AiOutlineClose className='mt-1 text-xl cursor-pointer' onClick={ () => props.handleClose() } />
+                    <AiOutlineClose className='mt-1 text-xl cursor-pointer z-50' onClick={ () => props.handleClose() } />
                 </div>
                 { props.children }
             </div>  
