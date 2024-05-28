@@ -389,7 +389,7 @@ export default function Home() {
               </div>
               <p className='pt-4'>
                 <a className='text-md text-gray dark:text-white font-semibold border-2 border-gray dark:border-white hover:bg-gray dark:hover:bg-white hover:text-white dark:hover:text-gray transition ease-in-out px-2 py-2 rounded-md'
-                  href='/resume/ResumeMitchellConradOctober2023.pdf'
+                  href='/resume/ResumeMitchellConradMay2024.pdf'
                   target='_blank'
                   rel='noreferrer '>Print</a>
               </p>
