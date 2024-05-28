@@ -5,7 +5,6 @@ import Typewriter from 'typewriter-effect';
 import Reveal from './Reveal';
 import headshotSquareClear from '../../public/images/headshot-square-clear.png'
 import { VscChromeMinimize , VscChromeMaximize, VscChromeClose } from "react-icons/vsc";
-import { randInt } from 'three/src/math/MathUtils.js';
 
 const Splash = (props: {setPhone: () => void, setEmail: () => void, setResume: () => void}) => {
   return (

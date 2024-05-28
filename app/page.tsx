@@ -251,16 +251,35 @@ export default function Home() {
           <div className='flex flex-col justify-center align-middle w-full h-full'>
             <div className='flex justify-center gap-10'>
               <div className='md:w-3/4 lg:w-2/3'>
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
                 <h3 className='text-xl font-semibold'>Optical Wireless Communications</h3>
-                <p className='text-sm font-semibold'>May - Aug 2023</p>
+                <p className='text-sm font-semibold'>May 2023 - August 2024</p>
                 <p className='py-5'>The Optical Wireless Communications project is a capstone project at York College of Pennsylvania. The project has been in developement through three graduating classes.The goal of the project is to develop a reliable wireless communications system using directional infrared transceivers. The previous team developed discovery and maintenance protocols which establish and maintain TCP sockets between robots.</p>
                 <p className='pb-5'>My team and I sought to improve the system by using cameras and object detection to locate other robots. We developed a multithreaded pipeline that uses OpenCV to merge many video streams into a panoramic feed. Then, the resulting stream is sent to a custom object detection model for real-time object recognition. When a robot is identified, a TCP socket can be created and data can be transmitted between the robots.</p>
-                <p>My team and I will continue to work on the project throughout the Spring semester in 2024 where we hope to continue improving the system.</p>
+                <p>My team and I worked on this project for two semesters. I will continue working on the project for a third semester.</p>             
+
                 <br />
+                <div className='hidden md:block'>
+                  <iframe width="620" height="349" src="https://www.youtube.com/embed/VvumQBKlWbI?si=qJVy5n8YaQD_tk45" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerPolicy="strict-origin-when-cross-origin" allowFullScreen></iframe>
+                </div>
+                <div className='block md:hidden'>
+                  <iframe width="300" height="169" src="https://www.youtube.com/embed/VvumQBKlWbI?si=qJVy5n8YaQD_tk45" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerPolicy="strict-origin-when-cross-origin" allowFullScreen></iframe>
+                </div>
+                <br />
+
                 <a className='text-md text-gray dark:text-white font-semibold border-2 border-gray dark:border-white hover:bg-gray dark:hover:bg-white hover:text-white dark:hover:text-gray transition ease-in-out px-2 py-2 rounded-md'
                   href='https://github.com/bhageneder/OpticalCapstoneComputerVision2023' 
                   target='_blank' 
                   rel='noreferrer'>GitHub</a>
+                <br />
+                <br />
+                <br />
+                <br />
               </div>
             </div>
           </div>
