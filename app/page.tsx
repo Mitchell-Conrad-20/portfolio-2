@@ -385,11 +385,11 @@ export default function Home() {
             <div className='flex gap-x-10 justify-evenly pb-10'>
               <div>
                 <h3 className='text-xl font-semibold'>Resume</h3>
-                <p className='text-sm font-semibold py-2'>Updated May 2024</p>
+                <p className='text-sm font-semibold py-2'>Updated August 2024</p>
               </div>
               <p className='pt-4'>
                 <a className='text-md text-gray dark:text-white font-semibold border-2 border-gray dark:border-white hover:bg-gray dark:hover:bg-white hover:text-white dark:hover:text-gray transition ease-in-out px-2 py-2 rounded-md'
-                  href='/resume/ResumeMitchellConradMay2024.pdf'
+                  href='/resume/ResumeMitchellConradAugust2024.pdf'
                   target='_blank'
                   rel='noreferrer '>Print</a>
               </p>

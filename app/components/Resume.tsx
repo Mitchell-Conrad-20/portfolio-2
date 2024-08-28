@@ -41,7 +41,7 @@ const Resume = () => {
   return (
     <div className='w-full h-full flex flex-col align-middle'>
         <div ref={ refContainer } className='w-full md:w-2/3 xl:w-1/2 pb-10 mx-auto'>
-            <Document className={'shadow-2xl overflow-hidden rounded-lg dark:border-none'} file='/resume/ResumeMitchellConradMay2024.pdf' onLoadSuccess={onDocumentLoadSuccess}>
+            <Document className={'shadow-2xl overflow-hidden rounded-lg dark:border-none'} file='/resume/ResumeMitchellConradAugust2024.pdf' onLoadSuccess={onDocumentLoadSuccess}>
                 <Page pageNumber={pageNumber} renderAnnotationLayer={ false } renderTextLayer={ false } width={ width } />
             </Document>
         </div>
