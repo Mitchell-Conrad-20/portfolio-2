@@ -45,11 +45,11 @@ const Splash = (props: {setPhone: () => void, setEmail: () => void, setResume: (
                             <Typewriter
                                 onInit={(typewriter) => {
                                 typewriter.changeDelay(Math.floor(Math.random()*50) + (Math.floor(Math.random()*30)))
-                                typewriter.typeString('> Swift learner and highly motivated engineer.<br />> ')
-                                    .pauseFor(500)
-                                    .typeString('Interested in embedded systems, software, and hardware.<br />> ')
-                                    .pauseFor(500)
-                                    .typeString('Graduating August 2024.')
+                                typewriter.typeString('> Swift learner and highly-motivated engineer.<br />> ')
+                                    .pauseFor(300 + Math.floor(Math.random()*200))
+                                    .typeString('Interested in embedded systems and full-stack software development<br />> ')
+                                    .pauseFor(300 + Math.floor(Math.random()*200))
+                                    .typeString('Graduated August 2024 with a B.S. in Computer Engineering.<br />> ')
                                     .callFunction(() => {
                                     })
                                     .start();
