@@ -17,7 +17,7 @@ const Socials = (props: {setPhone: () => void, setEmail: () => void}) => {
         }/>
         <AiFillMail className='cursor-pointer' onClick={()=> {
             props.setEmail()
-            navigator.clipboard.writeText('mconrad4@ycp.edu')
+            navigator.clipboard.writeText('mitchell.conrad@gmail.com')
         }
         }/>
     </div> 
