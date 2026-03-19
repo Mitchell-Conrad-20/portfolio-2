@@ -104,14 +104,31 @@ const TimelineVertical = () => {
         <div className='flex justify-center'>
             <div className='flex-grow h-0.5 mt-6 rounded-r-md bg-white' />
             <div className='w-2 h-20 rounded-md bg-triadic2' />
-            <div className='w-2 h-full mx-2 bg-white' />
-            <div className='w-2 h-full bg-analagous1' />
+            <div className='w-2 h-full mx-2 rounded-b-md bg-white' />
+            <div className='w-2 h-full rounded-b-md bg-analagous1' />
             <div className='flex-grow h-0.5 mt-6' />
         </div>
         <div className='col-span-3'/>
 
         {/* Row 8 */}
-        <div className='col-span-3 pt-3'/>
+        <div className='col-span-3 pt-3 ml-0'>
+            <Reveal>
+                <p className='font-bold'>MDI</p>
+                <p className='text-sm font-semibold'>Aug 2024-Present</p>
+                <p className='text-sm'>Controls Engineer</p>
+            </Reveal>
+        </div>
+        <div className='flex justify-center'>
+            <div className='flex-grow h-0.5 mt-6 rounded-r-md bg-white' />
+            <div className='w-2 h-20 rounded-md bg-triadic2' />
+            {/* <div className='w-2 h-full mx-2 bg-white' /> */}
+            {/* <div className='w-2 h-full bg-analagous1' /> */}
+            <div className='w-2 h-full mx-2' />
+            <div className='w-2 h-full' />
+            <div className='flex-grow h-0.5 mt-6' />
+        </div>
+        <div className='col-span-3'/>
+        {/* <div className='col-span-3 pt-3'/>
         <div className='flex justify-center'>
             <div className='flex-grow h-0.5 mt-6' />
             <div className='w-2 h-20' />
@@ -119,7 +136,7 @@ const TimelineVertical = () => {
             <div className='w-2 h-20 rounded-b-md bg-analagous1' />
             <div className='flex-grow h-0.5 mt-6' />
         </div>
-        <div className='col-span-3'/>
+        <div className='col-span-3'/> */}
 
     </div>
   )
